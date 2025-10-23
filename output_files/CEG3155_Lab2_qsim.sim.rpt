@@ -1,0 +1,944 @@
+Simulator report for CEG3155_Lab2_qsim
+Fri Oct 17 18:53:36 2025
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 400.0 ns     ;
+; Simulation Netlist Size     ; 735 nodes    ;
+; Simulation Coverage         ;      93.47 % ;
+; Total Number of Transitions ; 51216        ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone III  ;
++-----------------------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                               ;
++--------------------------------------------------------------------------------------------+-------------------------------------+---------------+
+; Option                                                                                     ; Setting                             ; Default Value ;
++--------------------------------------------------------------------------------------------+-------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                          ; Timing        ;
+; Start time                                                                                 ; 0 ns                                ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                 ;               ;
+; Vector input source                                                                        ; C:/Project/CEG3155_Lab2/alu_top.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                  ; On            ;
+; Check outputs                                                                              ; Off                                 ; Off           ;
+; Report simulation coverage                                                                 ; On                                  ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                  ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                  ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                  ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                 ; Off           ;
+; Detect glitches                                                                            ; Off                                 ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                 ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                 ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                 ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                 ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                  ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                          ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                 ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                 ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                ; Auto          ;
+; Interconnect Delay Model Type                                                              ; Transport                           ; Transport     ;
+; Cell Delay Model Type                                                                      ; Transport                           ; Transport     ;
++--------------------------------------------------------------------------------------------+-------------------------------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II 64-Bit to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;      93.47 % ;
+; Total nodes checked                                 ; 735          ;
+; Total output ports checked                          ; 735          ;
+; Total output ports with complete 1/0-value coverage ; 687          ;
+; Total output ports with no 1/0-value coverage       ; 45           ;
+; Total output ports with no 1-value coverage         ; 46           ;
+; Total output ports with no 0-value coverage         ; 47           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                                                                                                                ;
++------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------+
+; Node Name                                                                          ; Output Port Name                                                                   ; Output Port Type ;
++------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------+
+; |alu_top|div_last_A[2]                                                             ; |alu_top|div_last_A[2]                                                             ; regout           ;
+; |alu_top|need_mul~0                                                                ; |alu_top|need_mul~0                                                                ; out0             ;
+; |alu_top|div_last_A[1]                                                             ; |alu_top|div_last_A[1]                                                             ; regout           ;
+; |alu_top|need_mul~1                                                                ; |alu_top|need_mul~1                                                                ; out0             ;
+; |alu_top|need_mul~2                                                                ; |alu_top|need_mul~2                                                                ; out0             ;
+; |alu_top|need_mul~3                                                                ; |alu_top|need_mul~3                                                                ; out0             ;
+; |alu_top|mul_running~0                                                             ; |alu_top|mul_running~0                                                             ; out              ;
+; |alu_top|prod_reg~0                                                                ; |alu_top|prod_reg~0                                                                ; out              ;
+; |alu_top|prod_reg~1                                                                ; |alu_top|prod_reg~1                                                                ; out              ;
+; |alu_top|prod_reg~2                                                                ; |alu_top|prod_reg~2                                                                ; out              ;
+; |alu_top|prod_reg~3                                                                ; |alu_top|prod_reg~3                                                                ; out              ;
+; |alu_top|prod_reg~4                                                                ; |alu_top|prod_reg~4                                                                ; out              ;
+; |alu_top|prod_reg~5                                                                ; |alu_top|prod_reg~5                                                                ; out              ;
+; |alu_top|prod_reg~6                                                                ; |alu_top|prod_reg~6                                                                ; out              ;
+; |alu_top|mul_last_A~0                                                              ; |alu_top|mul_last_A~0                                                              ; out              ;
+; |alu_top|mul_last_A~1                                                              ; |alu_top|mul_last_A~1                                                              ; out              ;
+; |alu_top|mul_last_A~2                                                              ; |alu_top|mul_last_A~2                                                              ; out              ;
+; |alu_top|mul_last_A~3                                                              ; |alu_top|mul_last_A~3                                                              ; out              ;
+; |alu_top|mul_last_B~0                                                              ; |alu_top|mul_last_B~0                                                              ; out              ;
+; |alu_top|mul_last_B~1                                                              ; |alu_top|mul_last_B~1                                                              ; out              ;
+; |alu_top|mul_last_B~2                                                              ; |alu_top|mul_last_B~2                                                              ; out              ;
+; |alu_top|mul_last_B~3                                                              ; |alu_top|mul_last_B~3                                                              ; out              ;
+; |alu_top|mul_running~1                                                             ; |alu_top|mul_running~1                                                             ; out              ;
+; |alu_top|mul_inited~0                                                              ; |alu_top|mul_inited~0                                                              ; out              ;
+; |alu_top|div_last_A[0]                                                             ; |alu_top|div_last_A[0]                                                             ; regout           ;
+; |alu_top|need_div~0                                                                ; |alu_top|need_div~0                                                                ; out0             ;
+; |alu_top|need_div~1                                                                ; |alu_top|need_div~1                                                                ; out0             ;
+; |alu_top|div_last_B[3]                                                             ; |alu_top|div_last_B[3]                                                             ; regout           ;
+; |alu_top|need_div~2                                                                ; |alu_top|need_div~2                                                                ; out0             ;
+; |alu_top|need_div~3                                                                ; |alu_top|need_div~3                                                                ; out0             ;
+; |alu_top|div_running~0                                                             ; |alu_top|div_running~0                                                             ; out              ;
+; |alu_top|div_q~0                                                                   ; |alu_top|div_q~0                                                                   ; out              ;
+; |alu_top|div_q~1                                                                   ; |alu_top|div_q~1                                                                   ; out              ;
+; |alu_top|div_q~2                                                                   ; |alu_top|div_q~2                                                                   ; out              ;
+; |alu_top|div_q~3                                                                   ; |alu_top|div_q~3                                                                   ; out              ;
+; |alu_top|div_r~0                                                                   ; |alu_top|div_r~0                                                                   ; out              ;
+; |alu_top|div_r~1                                                                   ; |alu_top|div_r~1                                                                   ; out              ;
+; |alu_top|div_r~2                                                                   ; |alu_top|div_r~2                                                                   ; out              ;
+; |alu_top|div_r~3                                                                   ; |alu_top|div_r~3                                                                   ; out              ;
+; |alu_top|div_last_A~0                                                              ; |alu_top|div_last_A~0                                                              ; out              ;
+; |alu_top|div_last_A~1                                                              ; |alu_top|div_last_A~1                                                              ; out              ;
+; |alu_top|div_last_A~2                                                              ; |alu_top|div_last_A~2                                                              ; out              ;
+; |alu_top|div_last_A~3                                                              ; |alu_top|div_last_A~3                                                              ; out              ;
+; |alu_top|div_last_B~0                                                              ; |alu_top|div_last_B~0                                                              ; out              ;
+; |alu_top|div_last_B~1                                                              ; |alu_top|div_last_B~1                                                              ; out              ;
+; |alu_top|div_last_B~2                                                              ; |alu_top|div_last_B~2                                                              ; out              ;
+; |alu_top|div_last_B~3                                                              ; |alu_top|div_last_B~3                                                              ; out              ;
+; |alu_top|div_running~1                                                             ; |alu_top|div_running~1                                                             ; out              ;
+; |alu_top|div_inited~0                                                              ; |alu_top|div_inited~0                                                              ; out              ;
+; |alu_top|mul_start~0                                                               ; |alu_top|mul_start~0                                                               ; out              ;
+; |alu_top|mul_running~2                                                             ; |alu_top|mul_running~2                                                             ; out              ;
+; |alu_top|mul_inited~1                                                              ; |alu_top|mul_inited~1                                                              ; out              ;
+; |alu_top|prod_reg~8                                                                ; |alu_top|prod_reg~8                                                                ; out              ;
+; |alu_top|prod_reg~9                                                                ; |alu_top|prod_reg~9                                                                ; out              ;
+; |alu_top|prod_reg~10                                                               ; |alu_top|prod_reg~10                                                               ; out              ;
+; |alu_top|prod_reg~11                                                               ; |alu_top|prod_reg~11                                                               ; out              ;
+; |alu_top|prod_reg~12                                                               ; |alu_top|prod_reg~12                                                               ; out              ;
+; |alu_top|prod_reg~13                                                               ; |alu_top|prod_reg~13                                                               ; out              ;
+; |alu_top|prod_reg~14                                                               ; |alu_top|prod_reg~14                                                               ; out              ;
+; |alu_top|mul_last_A~4                                                              ; |alu_top|mul_last_A~4                                                              ; out              ;
+; |alu_top|mul_last_A~5                                                              ; |alu_top|mul_last_A~5                                                              ; out              ;
+; |alu_top|mul_last_A~6                                                              ; |alu_top|mul_last_A~6                                                              ; out              ;
+; |alu_top|mul_last_A~7                                                              ; |alu_top|mul_last_A~7                                                              ; out              ;
+; |alu_top|mul_last_B~4                                                              ; |alu_top|mul_last_B~4                                                              ; out              ;
+; |alu_top|mul_last_B~5                                                              ; |alu_top|mul_last_B~5                                                              ; out              ;
+; |alu_top|mul_last_B~6                                                              ; |alu_top|mul_last_B~6                                                              ; out              ;
+; |alu_top|mul_last_B~7                                                              ; |alu_top|mul_last_B~7                                                              ; out              ;
+; |alu_top|div_start~0                                                               ; |alu_top|div_start~0                                                               ; out              ;
+; |alu_top|div_running~2                                                             ; |alu_top|div_running~2                                                             ; out              ;
+; |alu_top|div_inited~1                                                              ; |alu_top|div_inited~1                                                              ; out              ;
+; |alu_top|div_q~4                                                                   ; |alu_top|div_q~4                                                                   ; out              ;
+; |alu_top|div_q~5                                                                   ; |alu_top|div_q~5                                                                   ; out              ;
+; |alu_top|div_q~6                                                                   ; |alu_top|div_q~6                                                                   ; out              ;
+; |alu_top|div_q~7                                                                   ; |alu_top|div_q~7                                                                   ; out              ;
+; |alu_top|div_r~4                                                                   ; |alu_top|div_r~4                                                                   ; out              ;
+; |alu_top|div_r~5                                                                   ; |alu_top|div_r~5                                                                   ; out              ;
+; |alu_top|div_r~6                                                                   ; |alu_top|div_r~6                                                                   ; out              ;
+; |alu_top|div_r~7                                                                   ; |alu_top|div_r~7                                                                   ; out              ;
+; |alu_top|div_last_A~4                                                              ; |alu_top|div_last_A~4                                                              ; out              ;
+; |alu_top|div_last_A~5                                                              ; |alu_top|div_last_A~5                                                              ; out              ;
+; |alu_top|div_last_A~6                                                              ; |alu_top|div_last_A~6                                                              ; out              ;
+; |alu_top|div_last_A~7                                                              ; |alu_top|div_last_A~7                                                              ; out              ;
+; |alu_top|div_last_B~4                                                              ; |alu_top|div_last_B~4                                                              ; out              ;
+; |alu_top|div_last_B~5                                                              ; |alu_top|div_last_B~5                                                              ; out              ;
+; |alu_top|div_last_B~6                                                              ; |alu_top|div_last_B~6                                                              ; out              ;
+; |alu_top|div_last_B~7                                                              ; |alu_top|div_last_B~7                                                              ; out              ;
+; |alu_top|div_last_B[2]                                                             ; |alu_top|div_last_B[2]                                                             ; regout           ;
+; |alu_top|out_bus~0                                                                 ; |alu_top|out_bus~0                                                                 ; out              ;
+; |alu_top|out_bus~1                                                                 ; |alu_top|out_bus~1                                                                 ; out              ;
+; |alu_top|out_bus~2                                                                 ; |alu_top|out_bus~2                                                                 ; out              ;
+; |alu_top|out_bus~3                                                                 ; |alu_top|out_bus~3                                                                 ; out              ;
+; |alu_top|out_bus~4                                                                 ; |alu_top|out_bus~4                                                                 ; out              ;
+; |alu_top|out_bus~5                                                                 ; |alu_top|out_bus~5                                                                 ; out              ;
+; |alu_top|out_bus~6                                                                 ; |alu_top|out_bus~6                                                                 ; out              ;
+; |alu_top|out_bus~7                                                                 ; |alu_top|out_bus~7                                                                 ; out              ;
+; |alu_top|out_bus~8                                                                 ; |alu_top|out_bus~8                                                                 ; out              ;
+; |alu_top|out_bus~9                                                                 ; |alu_top|out_bus~9                                                                 ; out              ;
+; |alu_top|out_bus~10                                                                ; |alu_top|out_bus~10                                                                ; out              ;
+; |alu_top|out_bus~11                                                                ; |alu_top|out_bus~11                                                                ; out              ;
+; |alu_top|out_bus~12                                                                ; |alu_top|out_bus~12                                                                ; out              ;
+; |alu_top|out_bus~13                                                                ; |alu_top|out_bus~13                                                                ; out              ;
+; |alu_top|out_bus~14                                                                ; |alu_top|out_bus~14                                                                ; out              ;
+; |alu_top|out_bus~15                                                                ; |alu_top|out_bus~15                                                                ; out              ;
+; |alu_top|out_bus~16                                                                ; |alu_top|out_bus~16                                                                ; out              ;
+; |alu_top|out_bus~17                                                                ; |alu_top|out_bus~17                                                                ; out              ;
+; |alu_top|out_bus~18                                                                ; |alu_top|out_bus~18                                                                ; out              ;
+; |alu_top|out_bus~19                                                                ; |alu_top|out_bus~19                                                                ; out              ;
+; |alu_top|out_bus~20                                                                ; |alu_top|out_bus~20                                                                ; out              ;
+; |alu_top|out_bus~21                                                                ; |alu_top|out_bus~21                                                                ; out              ;
+; |alu_top|out_bus~22                                                                ; |alu_top|out_bus~22                                                                ; out              ;
+; |alu_top|out_bus~23                                                                ; |alu_top|out_bus~23                                                                ; out              ;
+; |alu_top|div_last_B[1]                                                             ; |alu_top|div_last_B[1]                                                             ; regout           ;
+; |alu_top|CarryOut~0                                                                ; |alu_top|CarryOut~0                                                                ; out              ;
+; |alu_top|CarryOut~1                                                                ; |alu_top|CarryOut~1                                                                ; out              ;
+; |alu_top|div_last_B[0]                                                             ; |alu_top|div_last_B[0]                                                             ; regout           ;
+; |alu_top|OverflowOut~0                                                             ; |alu_top|OverflowOut~0                                                             ; out              ;
+; |alu_top|OverflowOut~1                                                             ; |alu_top|OverflowOut~1                                                             ; out              ;
+; |alu_top|div_last_A[3]                                                             ; |alu_top|div_last_A[3]                                                             ; regout           ;
+; |alu_top|div_r[0]                                                                  ; |alu_top|div_r[0]                                                                  ; regout           ;
+; |alu_top|div_r[1]                                                                  ; |alu_top|div_r[1]                                                                  ; regout           ;
+; |alu_top|div_r[2]                                                                  ; |alu_top|div_r[2]                                                                  ; regout           ;
+; |alu_top|div_r[3]                                                                  ; |alu_top|div_r[3]                                                                  ; regout           ;
+; |alu_top|div_q[0]                                                                  ; |alu_top|div_q[0]                                                                  ; regout           ;
+; |alu_top|div_q[1]                                                                  ; |alu_top|div_q[1]                                                                  ; regout           ;
+; |alu_top|div_q[2]                                                                  ; |alu_top|div_q[2]                                                                  ; regout           ;
+; |alu_top|div_q[3]                                                                  ; |alu_top|div_q[3]                                                                  ; regout           ;
+; |alu_top|div_inited                                                                ; |alu_top|div_inited                                                                ; regout           ;
+; |alu_top|div_running                                                               ; |alu_top|div_running                                                               ; regout           ;
+; |alu_top|div_start                                                                 ; |alu_top|div_start                                                                 ; regout           ;
+; |alu_top|mul_last_B[0]                                                             ; |alu_top|mul_last_B[0]                                                             ; regout           ;
+; |alu_top|mul_last_B[1]                                                             ; |alu_top|mul_last_B[1]                                                             ; regout           ;
+; |alu_top|mul_last_B[2]                                                             ; |alu_top|mul_last_B[2]                                                             ; regout           ;
+; |alu_top|mul_last_B[3]                                                             ; |alu_top|mul_last_B[3]                                                             ; regout           ;
+; |alu_top|mul_last_A[0]                                                             ; |alu_top|mul_last_A[0]                                                             ; regout           ;
+; |alu_top|mul_last_A[1]                                                             ; |alu_top|mul_last_A[1]                                                             ; regout           ;
+; |alu_top|mul_last_A[2]                                                             ; |alu_top|mul_last_A[2]                                                             ; regout           ;
+; |alu_top|mul_last_A[3]                                                             ; |alu_top|mul_last_A[3]                                                             ; regout           ;
+; |alu_top|prod_reg[1]                                                               ; |alu_top|prod_reg[1]                                                               ; regout           ;
+; |alu_top|prod_reg[2]                                                               ; |alu_top|prod_reg[2]                                                               ; regout           ;
+; |alu_top|prod_reg[3]                                                               ; |alu_top|prod_reg[3]                                                               ; regout           ;
+; |alu_top|prod_reg[4]                                                               ; |alu_top|prod_reg[4]                                                               ; regout           ;
+; |alu_top|prod_reg[5]                                                               ; |alu_top|prod_reg[5]                                                               ; regout           ;
+; |alu_top|prod_reg[6]                                                               ; |alu_top|prod_reg[6]                                                               ; regout           ;
+; |alu_top|prod_reg[7]                                                               ; |alu_top|prod_reg[7]                                                               ; regout           ;
+; |alu_top|mul_inited                                                                ; |alu_top|mul_inited                                                                ; regout           ;
+; |alu_top|mul_running                                                               ; |alu_top|mul_running                                                               ; regout           ;
+; |alu_top|mul_start                                                                 ; |alu_top|mul_start                                                                 ; regout           ;
+; |alu_top|GClock                                                                    ; |alu_top|GClock                                                                    ; out              ;
+; |alu_top|GReset                                                                    ; |alu_top|GReset                                                                    ; out              ;
+; |alu_top|OperandA[0]                                                               ; |alu_top|OperandA[0]                                                               ; out              ;
+; |alu_top|OperandA[1]                                                               ; |alu_top|OperandA[1]                                                               ; out              ;
+; |alu_top|OperandA[2]                                                               ; |alu_top|OperandA[2]                                                               ; out              ;
+; |alu_top|OperandA[3]                                                               ; |alu_top|OperandA[3]                                                               ; out              ;
+; |alu_top|OperandB[0]                                                               ; |alu_top|OperandB[0]                                                               ; out              ;
+; |alu_top|OperandB[1]                                                               ; |alu_top|OperandB[1]                                                               ; out              ;
+; |alu_top|OperandB[2]                                                               ; |alu_top|OperandB[2]                                                               ; out              ;
+; |alu_top|OperandB[3]                                                               ; |alu_top|OperandB[3]                                                               ; out              ;
+; |alu_top|OperationSelect[0]                                                        ; |alu_top|OperationSelect[0]                                                        ; out              ;
+; |alu_top|MuxOut[0]                                                                 ; |alu_top|MuxOut[0]                                                                 ; pin_out          ;
+; |alu_top|MuxOut[1]                                                                 ; |alu_top|MuxOut[1]                                                                 ; pin_out          ;
+; |alu_top|MuxOut[2]                                                                 ; |alu_top|MuxOut[2]                                                                 ; pin_out          ;
+; |alu_top|MuxOut[3]                                                                 ; |alu_top|MuxOut[3]                                                                 ; pin_out          ;
+; |alu_top|MuxOut[4]                                                                 ; |alu_top|MuxOut[4]                                                                 ; pin_out          ;
+; |alu_top|MuxOut[5]                                                                 ; |alu_top|MuxOut[5]                                                                 ; pin_out          ;
+; |alu_top|MuxOut[6]                                                                 ; |alu_top|MuxOut[6]                                                                 ; pin_out          ;
+; |alu_top|MuxOut[7]                                                                 ; |alu_top|MuxOut[7]                                                                 ; pin_out          ;
+; |alu_top|CarryOut                                                                  ; |alu_top|CarryOut                                                                  ; pin_out          ;
+; |alu_top|ZeroOut                                                                   ; |alu_top|ZeroOut                                                                   ; pin_out          ;
+; |alu_top|OverflowOut                                                               ; |alu_top|OverflowOut                                                               ; pin_out          ;
+; |alu_top|nr_div4_signed:U_DIV|absA[3]                                              ; |alu_top|nr_div4_signed:U_DIV|absA[3]                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|absA[2]                                              ; |alu_top|nr_div4_signed:U_DIV|absA[2]                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|absA[1]                                              ; |alu_top|nr_div4_signed:U_DIV|absA[1]                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|absB[3]                                              ; |alu_top|nr_div4_signed:U_DIV|absB[3]                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|absB[2]                                              ; |alu_top|nr_div4_signed:U_DIV|absB[2]                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|absB[1]                                              ; |alu_top|nr_div4_signed:U_DIV|absB[1]                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|st~0                                                 ; |alu_top|nr_div4_signed:U_DIV|st~0                                                 ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|st~1                                                 ; |alu_top|nr_div4_signed:U_DIV|st~1                                                 ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|st~2                                                 ; |alu_top|nr_div4_signed:U_DIV|st~2                                                 ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|st~3                                                 ; |alu_top|nr_div4_signed:U_DIV|st~3                                                 ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|st~4                                                 ; |alu_top|nr_div4_signed:U_DIV|st~4                                                 ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|st~5                                                 ; |alu_top|nr_div4_signed:U_DIV|st~5                                                 ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|st~6                                                 ; |alu_top|nr_div4_signed:U_DIV|st~6                                                 ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|A_reg~0                                              ; |alu_top|nr_div4_signed:U_DIV|A_reg~0                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|A_reg~1                                              ; |alu_top|nr_div4_signed:U_DIV|A_reg~1                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|A_reg~2                                              ; |alu_top|nr_div4_signed:U_DIV|A_reg~2                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|A_reg~3                                              ; |alu_top|nr_div4_signed:U_DIV|A_reg~3                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|B_reg~0                                              ; |alu_top|nr_div4_signed:U_DIV|B_reg~0                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|B_reg~1                                              ; |alu_top|nr_div4_signed:U_DIV|B_reg~1                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|B_reg~2                                              ; |alu_top|nr_div4_signed:U_DIV|B_reg~2                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|B_reg~3                                              ; |alu_top|nr_div4_signed:U_DIV|B_reg~3                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|sA_reg~0                                             ; |alu_top|nr_div4_signed:U_DIV|sA_reg~0                                             ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|sB_reg~0                                             ; |alu_top|nr_div4_signed:U_DIV|sB_reg~0                                             ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q~0                                                  ; |alu_top|nr_div4_signed:U_DIV|Q~0                                                  ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q~1                                                  ; |alu_top|nr_div4_signed:U_DIV|Q~1                                                  ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q~2                                                  ; |alu_top|nr_div4_signed:U_DIV|Q~2                                                  ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q~3                                                  ; |alu_top|nr_div4_signed:U_DIV|Q~3                                                  ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R~1                                                  ; |alu_top|nr_div4_signed:U_DIV|R~1                                                  ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R~2                                                  ; |alu_top|nr_div4_signed:U_DIV|R~2                                                  ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R~3                                                  ; |alu_top|nr_div4_signed:U_DIV|R~3                                                  ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_after_shift~2                                      ; |alu_top|nr_div4_signed:U_DIV|R_after_shift~2                                      ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_after_shift~3                                      ; |alu_top|nr_div4_signed:U_DIV|R_after_shift~3                                      ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_after_shift~4                                      ; |alu_top|nr_div4_signed:U_DIV|R_after_shift~4                                      ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Mmag~0                                               ; |alu_top|nr_div4_signed:U_DIV|Mmag~0                                               ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Mmag~1                                               ; |alu_top|nr_div4_signed:U_DIV|Mmag~1                                               ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Mmag~2                                               ; |alu_top|nr_div4_signed:U_DIV|Mmag~2                                               ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Mmag~3                                               ; |alu_top|nr_div4_signed:U_DIV|Mmag~3                                               ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|cnt~0                                                ; |alu_top|nr_div4_signed:U_DIV|cnt~0                                                ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|cnt~1                                                ; |alu_top|nr_div4_signed:U_DIV|cnt~1                                                ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q_res~0                                              ; |alu_top|nr_div4_signed:U_DIV|Q_res~0                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q_res~1                                              ; |alu_top|nr_div4_signed:U_DIV|Q_res~1                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q_res~2                                              ; |alu_top|nr_div4_signed:U_DIV|Q_res~2                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q_res~3                                              ; |alu_top|nr_div4_signed:U_DIV|Q_res~3                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_res~0                                              ; |alu_top|nr_div4_signed:U_DIV|R_res~0                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_res~1                                              ; |alu_top|nr_div4_signed:U_DIV|R_res~1                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_res~2                                              ; |alu_top|nr_div4_signed:U_DIV|R_res~2                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_res~3                                              ; |alu_top|nr_div4_signed:U_DIV|R_res~3                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|done_r~0                                             ; |alu_top|nr_div4_signed:U_DIV|done_r~0                                             ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q_res_n~0                                            ; |alu_top|nr_div4_signed:U_DIV|Q_res_n~0                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q_res_n~1                                            ; |alu_top|nr_div4_signed:U_DIV|Q_res_n~1                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q_res_n~2                                            ; |alu_top|nr_div4_signed:U_DIV|Q_res_n~2                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q_res_n~3                                            ; |alu_top|nr_div4_signed:U_DIV|Q_res_n~3                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_res_n~0                                            ; |alu_top|nr_div4_signed:U_DIV|R_res_n~0                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_res_n~1                                            ; |alu_top|nr_div4_signed:U_DIV|R_res_n~1                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_res_n~2                                            ; |alu_top|nr_div4_signed:U_DIV|R_res_n~2                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_res_n~3                                            ; |alu_top|nr_div4_signed:U_DIV|R_res_n~3                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|A_reg_n~0                                            ; |alu_top|nr_div4_signed:U_DIV|A_reg_n~0                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|A_reg_n~1                                            ; |alu_top|nr_div4_signed:U_DIV|A_reg_n~1                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|A_reg_n~2                                            ; |alu_top|nr_div4_signed:U_DIV|A_reg_n~2                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|A_reg_n~3                                            ; |alu_top|nr_div4_signed:U_DIV|A_reg_n~3                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|B_reg_n~0                                            ; |alu_top|nr_div4_signed:U_DIV|B_reg_n~0                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|B_reg_n~1                                            ; |alu_top|nr_div4_signed:U_DIV|B_reg_n~1                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|B_reg_n~2                                            ; |alu_top|nr_div4_signed:U_DIV|B_reg_n~2                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|B_reg_n~3                                            ; |alu_top|nr_div4_signed:U_DIV|B_reg_n~3                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q_res_n~4                                            ; |alu_top|nr_div4_signed:U_DIV|Q_res_n~4                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q_res_n~5                                            ; |alu_top|nr_div4_signed:U_DIV|Q_res_n~5                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q_res_n~6                                            ; |alu_top|nr_div4_signed:U_DIV|Q_res_n~6                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q_res_n~7                                            ; |alu_top|nr_div4_signed:U_DIV|Q_res_n~7                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_res_n~4                                            ; |alu_top|nr_div4_signed:U_DIV|R_res_n~4                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_res_n~5                                            ; |alu_top|nr_div4_signed:U_DIV|R_res_n~5                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_res_n~6                                            ; |alu_top|nr_div4_signed:U_DIV|R_res_n~6                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_res_n~7                                            ; |alu_top|nr_div4_signed:U_DIV|R_res_n~7                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|st_n~0                                               ; |alu_top|nr_div4_signed:U_DIV|st_n~0                                               ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|st_n~1                                               ; |alu_top|nr_div4_signed:U_DIV|st_n~1                                               ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|st_n~2                                               ; |alu_top|nr_div4_signed:U_DIV|st_n~2                                               ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|st_n~3                                               ; |alu_top|nr_div4_signed:U_DIV|st_n~3                                               ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|st_n~4                                               ; |alu_top|nr_div4_signed:U_DIV|st_n~4                                               ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|st_n~5                                               ; |alu_top|nr_div4_signed:U_DIV|st_n~5                                               ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|st_n~6                                               ; |alu_top|nr_div4_signed:U_DIV|st_n~6                                               ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_n~0                                                ; |alu_top|nr_div4_signed:U_DIV|R_n~0                                                ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_n~1                                                ; |alu_top|nr_div4_signed:U_DIV|R_n~1                                                ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_n~2                                                ; |alu_top|nr_div4_signed:U_DIV|R_n~2                                                ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_n~3                                                ; |alu_top|nr_div4_signed:U_DIV|R_n~3                                                ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q_n~0                                                ; |alu_top|nr_div4_signed:U_DIV|Q_n~0                                                ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|cnt_n~0                                              ; |alu_top|nr_div4_signed:U_DIV|cnt_n~0                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|cnt_n~1                                              ; |alu_top|nr_div4_signed:U_DIV|cnt_n~1                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q_res_n~8                                            ; |alu_top|nr_div4_signed:U_DIV|Q_res_n~8                                            ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|apply_sign~0                                         ; |alu_top|nr_div4_signed:U_DIV|apply_sign~0                                         ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|apply_sign~1                                         ; |alu_top|nr_div4_signed:U_DIV|apply_sign~1                                         ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|apply_sign~2                                         ; |alu_top|nr_div4_signed:U_DIV|apply_sign~2                                         ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|apply_sign~4                                         ; |alu_top|nr_div4_signed:U_DIV|apply_sign~4                                         ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|apply_sign~5                                         ; |alu_top|nr_div4_signed:U_DIV|apply_sign~5                                         ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|apply_sign~6                                         ; |alu_top|nr_div4_signed:U_DIV|apply_sign~6                                         ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|st.S_IDLE                                            ; |alu_top|nr_div4_signed:U_DIV|st.S_IDLE                                            ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|st.S_PREP                                            ; |alu_top|nr_div4_signed:U_DIV|st.S_PREP                                            ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|st.S_SHIFT                                           ; |alu_top|nr_div4_signed:U_DIV|st.S_SHIFT                                           ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|WideOr0                                              ; |alu_top|nr_div4_signed:U_DIV|WideOr0                                              ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|st.S_CHECK                                           ; |alu_top|nr_div4_signed:U_DIV|st.S_CHECK                                           ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|st.S_DEC                                             ; |alu_top|nr_div4_signed:U_DIV|st.S_DEC                                             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|A_reg_n[3]                                           ; |alu_top|nr_div4_signed:U_DIV|A_reg_n[3]                                           ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|st.S_SIGN                                            ; |alu_top|nr_div4_signed:U_DIV|st.S_SIGN                                            ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|A_reg_n[2]                                           ; |alu_top|nr_div4_signed:U_DIV|A_reg_n[2]                                           ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|st.S_DONE                                            ; |alu_top|nr_div4_signed:U_DIV|st.S_DONE                                            ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|A_reg_n[1]                                           ; |alu_top|nr_div4_signed:U_DIV|A_reg_n[1]                                           ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|A_reg[3]                                             ; |alu_top|nr_div4_signed:U_DIV|A_reg[3]                                             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|A_reg_n[0]                                           ; |alu_top|nr_div4_signed:U_DIV|A_reg_n[0]                                           ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|A_reg[2]                                             ; |alu_top|nr_div4_signed:U_DIV|A_reg[2]                                             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|B_reg_n[3]                                           ; |alu_top|nr_div4_signed:U_DIV|B_reg_n[3]                                           ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|A_reg[1]                                             ; |alu_top|nr_div4_signed:U_DIV|A_reg[1]                                             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|B_reg_n[2]                                           ; |alu_top|nr_div4_signed:U_DIV|B_reg_n[2]                                           ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|A_reg[0]                                             ; |alu_top|nr_div4_signed:U_DIV|A_reg[0]                                             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|B_reg_n[1]                                           ; |alu_top|nr_div4_signed:U_DIV|B_reg_n[1]                                           ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|B_reg[3]                                             ; |alu_top|nr_div4_signed:U_DIV|B_reg[3]                                             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|B_reg_n[0]                                           ; |alu_top|nr_div4_signed:U_DIV|B_reg_n[0]                                           ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|B_reg[2]                                             ; |alu_top|nr_div4_signed:U_DIV|B_reg[2]                                             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|st_n.S_PREP                                          ; |alu_top|nr_div4_signed:U_DIV|st_n.S_PREP                                          ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|B_reg[1]                                             ; |alu_top|nr_div4_signed:U_DIV|B_reg[1]                                             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|sA_reg_n                                             ; |alu_top|nr_div4_signed:U_DIV|sA_reg_n                                             ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|B_reg[0]                                             ; |alu_top|nr_div4_signed:U_DIV|B_reg[0]                                             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|sB_reg_n                                             ; |alu_top|nr_div4_signed:U_DIV|sB_reg_n                                             ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|WideOr7                                              ; |alu_top|nr_div4_signed:U_DIV|WideOr7                                              ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|WideOr8                                              ; |alu_top|nr_div4_signed:U_DIV|WideOr8                                              ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|sA_reg                                               ; |alu_top|nr_div4_signed:U_DIV|sA_reg                                               ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|sB_reg                                               ; |alu_top|nr_div4_signed:U_DIV|sB_reg                                               ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|Q[3]                                                 ; |alu_top|nr_div4_signed:U_DIV|Q[3]                                                 ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|Mmag_n[3]                                            ; |alu_top|nr_div4_signed:U_DIV|Mmag_n[3]                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q[2]                                                 ; |alu_top|nr_div4_signed:U_DIV|Q[2]                                                 ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|Mmag_n[2]                                            ; |alu_top|nr_div4_signed:U_DIV|Mmag_n[2]                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q[1]                                                 ; |alu_top|nr_div4_signed:U_DIV|Q[1]                                                 ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|Mmag_n[1]                                            ; |alu_top|nr_div4_signed:U_DIV|Mmag_n[1]                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Q[0]                                                 ; |alu_top|nr_div4_signed:U_DIV|Q[0]                                                 ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|Mmag_n[0]                                            ; |alu_top|nr_div4_signed:U_DIV|Mmag_n[0]                                            ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|WideOr9                                              ; |alu_top|nr_div4_signed:U_DIV|WideOr9                                              ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|R[1]                                                 ; |alu_top|nr_div4_signed:U_DIV|R[1]                                                 ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|R[0]                                                 ; |alu_top|nr_div4_signed:U_DIV|R[0]                                                 ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|R_after_shift[1]                                     ; |alu_top|nr_div4_signed:U_DIV|R_after_shift[1]                                     ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|R_after_shift[0]                                     ; |alu_top|nr_div4_signed:U_DIV|R_after_shift[0]                                     ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|Mmag[2]                                              ; |alu_top|nr_div4_signed:U_DIV|Mmag[2]                                              ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|Mmag[1]                                              ; |alu_top|nr_div4_signed:U_DIV|Mmag[1]                                              ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|Mmag[0]                                              ; |alu_top|nr_div4_signed:U_DIV|Mmag[0]                                              ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|cnt[1]                                               ; |alu_top|nr_div4_signed:U_DIV|cnt[1]                                               ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|cnt[0]                                               ; |alu_top|nr_div4_signed:U_DIV|cnt[0]                                               ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|Q_res[3]                                             ; |alu_top|nr_div4_signed:U_DIV|Q_res[3]                                             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|Q_res[2]                                             ; |alu_top|nr_div4_signed:U_DIV|Q_res[2]                                             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|Q_res[1]                                             ; |alu_top|nr_div4_signed:U_DIV|Q_res[1]                                             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|Q_res[0]                                             ; |alu_top|nr_div4_signed:U_DIV|Q_res[0]                                             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|R_res[3]                                             ; |alu_top|nr_div4_signed:U_DIV|R_res[3]                                             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|R_res[2]                                             ; |alu_top|nr_div4_signed:U_DIV|R_res[2]                                             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|R_res[1]                                             ; |alu_top|nr_div4_signed:U_DIV|R_res[1]                                             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|R_res[0]                                             ; |alu_top|nr_div4_signed:U_DIV|R_res[0]                                             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|done_r                                               ; |alu_top|nr_div4_signed:U_DIV|done_r                                               ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|st~7                                                 ; |alu_top|nr_div4_signed:U_DIV|st~7                                                 ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|st.S_IDLE~0                                          ; |alu_top|nr_div4_signed:U_DIV|st.S_IDLE~0                                          ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|st_n~8                                               ; |alu_top|nr_div4_signed:U_DIV|st_n~8                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|st.S_PREP~0                                          ; |alu_top|nr_div4_signed:U_DIV|st.S_PREP~0                                          ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|st_n~10                                              ; |alu_top|nr_div4_signed:U_DIV|st_n~10                                              ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|st.S_SHIFT~0                                         ; |alu_top|nr_div4_signed:U_DIV|st.S_SHIFT~0                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|st_n~12                                              ; |alu_top|nr_div4_signed:U_DIV|st_n~12                                              ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|st.S_CHECK~0                                         ; |alu_top|nr_div4_signed:U_DIV|st.S_CHECK~0                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|st_n~14                                              ; |alu_top|nr_div4_signed:U_DIV|st_n~14                                              ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|st.S_DEC~0                                           ; |alu_top|nr_div4_signed:U_DIV|st.S_DEC~0                                           ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|st_n~16                                              ; |alu_top|nr_div4_signed:U_DIV|st_n~16                                              ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|st.S_SIGN~0                                          ; |alu_top|nr_div4_signed:U_DIV|st.S_SIGN~0                                          ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|st_n~18                                              ; |alu_top|nr_div4_signed:U_DIV|st_n~18                                              ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|st.S_DONE~0                                          ; |alu_top|nr_div4_signed:U_DIV|st.S_DONE~0                                          ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|st_n~20                                              ; |alu_top|nr_div4_signed:U_DIV|st_n~20                                              ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|st~11                                                ; |alu_top|nr_div4_signed:U_DIV|st~11                                                ; out0             ;
+; |alu_top|booth_mul4:U_MUL|st.S_DEC                                                 ; |alu_top|booth_mul4:U_MUL|st.S_DEC                                                 ; regout           ;
+; |alu_top|booth_mul4:U_MUL|st.S_DONE                                                ; |alu_top|booth_mul4:U_MUL|st.S_DONE                                                ; regout           ;
+; |alu_top|booth_mul4:U_MUL|A[3]                                                     ; |alu_top|booth_mul4:U_MUL|A[3]                                                     ; regout           ;
+; |alu_top|booth_mul4:U_MUL|A[2]                                                     ; |alu_top|booth_mul4:U_MUL|A[2]                                                     ; regout           ;
+; |alu_top|booth_mul4:U_MUL|A[1]                                                     ; |alu_top|booth_mul4:U_MUL|A[1]                                                     ; regout           ;
+; |alu_top|booth_mul4:U_MUL|A[0]                                                     ; |alu_top|booth_mul4:U_MUL|A[0]                                                     ; regout           ;
+; |alu_top|booth_mul4:U_MUL|op_sel_n~0                                               ; |alu_top|booth_mul4:U_MUL|op_sel_n~0                                               ; out              ;
+; |alu_top|booth_mul4:U_MUL|op_sel_n~1                                               ; |alu_top|booth_mul4:U_MUL|op_sel_n~1                                               ; out              ;
+; |alu_top|booth_mul4:U_MUL|do_op_n~0                                                ; |alu_top|booth_mul4:U_MUL|do_op_n~0                                                ; out              ;
+; |alu_top|booth_mul4:U_MUL|st_n~0                                                   ; |alu_top|booth_mul4:U_MUL|st_n~0                                                   ; out              ;
+; |alu_top|booth_mul4:U_MUL|A_n~0                                                    ; |alu_top|booth_mul4:U_MUL|A_n~0                                                    ; out              ;
+; |alu_top|booth_mul4:U_MUL|A_n~1                                                    ; |alu_top|booth_mul4:U_MUL|A_n~1                                                    ; out              ;
+; |alu_top|booth_mul4:U_MUL|A_n~2                                                    ; |alu_top|booth_mul4:U_MUL|A_n~2                                                    ; out              ;
+; |alu_top|booth_mul4:U_MUL|A_n~3                                                    ; |alu_top|booth_mul4:U_MUL|A_n~3                                                    ; out              ;
+; |alu_top|booth_mul4:U_MUL|Q[3]                                                     ; |alu_top|booth_mul4:U_MUL|Q[3]                                                     ; regout           ;
+; |alu_top|booth_mul4:U_MUL|Q[2]                                                     ; |alu_top|booth_mul4:U_MUL|Q[2]                                                     ; regout           ;
+; |alu_top|booth_mul4:U_MUL|Q[1]                                                     ; |alu_top|booth_mul4:U_MUL|Q[1]                                                     ; regout           ;
+; |alu_top|booth_mul4:U_MUL|cnt_n~0                                                  ; |alu_top|booth_mul4:U_MUL|cnt_n~0                                                  ; out              ;
+; |alu_top|booth_mul4:U_MUL|cnt_n~1                                                  ; |alu_top|booth_mul4:U_MUL|cnt_n~1                                                  ; out              ;
+; |alu_top|booth_mul4:U_MUL|cnt_n~2                                                  ; |alu_top|booth_mul4:U_MUL|cnt_n~2                                                  ; out              ;
+; |alu_top|booth_mul4:U_MUL|Q[0]                                                     ; |alu_top|booth_mul4:U_MUL|Q[0]                                                     ; regout           ;
+; |alu_top|booth_mul4:U_MUL|Qm1                                                      ; |alu_top|booth_mul4:U_MUL|Qm1                                                      ; regout           ;
+; |alu_top|booth_mul4:U_MUL|M[3]                                                     ; |alu_top|booth_mul4:U_MUL|M[3]                                                     ; regout           ;
+; |alu_top|booth_mul4:U_MUL|op_sel_n                                                 ; |alu_top|booth_mul4:U_MUL|op_sel_n                                                 ; out              ;
+; |alu_top|booth_mul4:U_MUL|do_op_n                                                  ; |alu_top|booth_mul4:U_MUL|do_op_n                                                  ; out              ;
+; |alu_top|booth_mul4:U_MUL|M[2]                                                     ; |alu_top|booth_mul4:U_MUL|M[2]                                                     ; regout           ;
+; |alu_top|booth_mul4:U_MUL|M[1]                                                     ; |alu_top|booth_mul4:U_MUL|M[1]                                                     ; regout           ;
+; |alu_top|booth_mul4:U_MUL|Q_n[3]                                                   ; |alu_top|booth_mul4:U_MUL|Q_n[3]                                                   ; out              ;
+; |alu_top|booth_mul4:U_MUL|Q_n[2]                                                   ; |alu_top|booth_mul4:U_MUL|Q_n[2]                                                   ; out              ;
+; |alu_top|booth_mul4:U_MUL|Q_n[1]                                                   ; |alu_top|booth_mul4:U_MUL|Q_n[1]                                                   ; out              ;
+; |alu_top|booth_mul4:U_MUL|Q_n[0]                                                   ; |alu_top|booth_mul4:U_MUL|Q_n[0]                                                   ; out              ;
+; |alu_top|booth_mul4:U_MUL|M[0]                                                     ; |alu_top|booth_mul4:U_MUL|M[0]                                                     ; regout           ;
+; |alu_top|booth_mul4:U_MUL|Qm1_n                                                    ; |alu_top|booth_mul4:U_MUL|Qm1_n                                                    ; out              ;
+; |alu_top|booth_mul4:U_MUL|cnt[2]                                                   ; |alu_top|booth_mul4:U_MUL|cnt[2]                                                   ; regout           ;
+; |alu_top|booth_mul4:U_MUL|cnt_n[2]                                                 ; |alu_top|booth_mul4:U_MUL|cnt_n[2]                                                 ; out              ;
+; |alu_top|booth_mul4:U_MUL|cnt[1]                                                   ; |alu_top|booth_mul4:U_MUL|cnt[1]                                                   ; regout           ;
+; |alu_top|booth_mul4:U_MUL|cnt_n[1]                                                 ; |alu_top|booth_mul4:U_MUL|cnt_n[1]                                                 ; out              ;
+; |alu_top|booth_mul4:U_MUL|cnt[0]                                                   ; |alu_top|booth_mul4:U_MUL|cnt[0]                                                   ; regout           ;
+; |alu_top|booth_mul4:U_MUL|cnt_n[0]                                                 ; |alu_top|booth_mul4:U_MUL|cnt_n[0]                                                 ; out              ;
+; |alu_top|booth_mul4:U_MUL|op_sel_reg                                               ; |alu_top|booth_mul4:U_MUL|op_sel_reg                                               ; regout           ;
+; |alu_top|booth_mul4:U_MUL|do_op_reg                                                ; |alu_top|booth_mul4:U_MUL|do_op_reg                                                ; regout           ;
+; |alu_top|booth_mul4:U_MUL|process_1~0                                              ; |alu_top|booth_mul4:U_MUL|process_1~0                                              ; out0             ;
+; |alu_top|booth_mul4:U_MUL|A~0                                                      ; |alu_top|booth_mul4:U_MUL|A~0                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|A~1                                                      ; |alu_top|booth_mul4:U_MUL|A~1                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|A~2                                                      ; |alu_top|booth_mul4:U_MUL|A~2                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|A~3                                                      ; |alu_top|booth_mul4:U_MUL|A~3                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|Q~0                                                      ; |alu_top|booth_mul4:U_MUL|Q~0                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|Q~1                                                      ; |alu_top|booth_mul4:U_MUL|Q~1                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|Q~2                                                      ; |alu_top|booth_mul4:U_MUL|Q~2                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|Q~3                                                      ; |alu_top|booth_mul4:U_MUL|Q~3                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|M~0                                                      ; |alu_top|booth_mul4:U_MUL|M~0                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|M~1                                                      ; |alu_top|booth_mul4:U_MUL|M~1                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|M~2                                                      ; |alu_top|booth_mul4:U_MUL|M~2                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|M~3                                                      ; |alu_top|booth_mul4:U_MUL|M~3                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|Qm1~0                                                    ; |alu_top|booth_mul4:U_MUL|Qm1~0                                                    ; out              ;
+; |alu_top|booth_mul4:U_MUL|cnt~0                                                    ; |alu_top|booth_mul4:U_MUL|cnt~0                                                    ; out              ;
+; |alu_top|booth_mul4:U_MUL|cnt~1                                                    ; |alu_top|booth_mul4:U_MUL|cnt~1                                                    ; out              ;
+; |alu_top|booth_mul4:U_MUL|cnt~2                                                    ; |alu_top|booth_mul4:U_MUL|cnt~2                                                    ; out              ;
+; |alu_top|booth_mul4:U_MUL|st~0                                                     ; |alu_top|booth_mul4:U_MUL|st~0                                                     ; out              ;
+; |alu_top|booth_mul4:U_MUL|st~1                                                     ; |alu_top|booth_mul4:U_MUL|st~1                                                     ; out              ;
+; |alu_top|booth_mul4:U_MUL|st~2                                                     ; |alu_top|booth_mul4:U_MUL|st~2                                                     ; out              ;
+; |alu_top|booth_mul4:U_MUL|st~3                                                     ; |alu_top|booth_mul4:U_MUL|st~3                                                     ; out              ;
+; |alu_top|booth_mul4:U_MUL|st~4                                                     ; |alu_top|booth_mul4:U_MUL|st~4                                                     ; out              ;
+; |alu_top|booth_mul4:U_MUL|st~5                                                     ; |alu_top|booth_mul4:U_MUL|st~5                                                     ; out              ;
+; |alu_top|booth_mul4:U_MUL|op_sel_reg~0                                             ; |alu_top|booth_mul4:U_MUL|op_sel_reg~0                                             ; out              ;
+; |alu_top|booth_mul4:U_MUL|do_op_reg~0                                              ; |alu_top|booth_mul4:U_MUL|do_op_reg~0                                              ; out              ;
+; |alu_top|booth_mul4:U_MUL|st~6                                                     ; |alu_top|booth_mul4:U_MUL|st~6                                                     ; out              ;
+; |alu_top|booth_mul4:U_MUL|st~7                                                     ; |alu_top|booth_mul4:U_MUL|st~7                                                     ; out              ;
+; |alu_top|booth_mul4:U_MUL|st~8                                                     ; |alu_top|booth_mul4:U_MUL|st~8                                                     ; out              ;
+; |alu_top|booth_mul4:U_MUL|st~9                                                     ; |alu_top|booth_mul4:U_MUL|st~9                                                     ; out              ;
+; |alu_top|booth_mul4:U_MUL|st~10                                                    ; |alu_top|booth_mul4:U_MUL|st~10                                                    ; out              ;
+; |alu_top|booth_mul4:U_MUL|st~11                                                    ; |alu_top|booth_mul4:U_MUL|st~11                                                    ; out              ;
+; |alu_top|booth_mul4:U_MUL|A~4                                                      ; |alu_top|booth_mul4:U_MUL|A~4                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|A~5                                                      ; |alu_top|booth_mul4:U_MUL|A~5                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|A~6                                                      ; |alu_top|booth_mul4:U_MUL|A~6                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|A~7                                                      ; |alu_top|booth_mul4:U_MUL|A~7                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|Q~4                                                      ; |alu_top|booth_mul4:U_MUL|Q~4                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|Q~5                                                      ; |alu_top|booth_mul4:U_MUL|Q~5                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|Q~6                                                      ; |alu_top|booth_mul4:U_MUL|Q~6                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|Q~7                                                      ; |alu_top|booth_mul4:U_MUL|Q~7                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|Qm1~1                                                    ; |alu_top|booth_mul4:U_MUL|Qm1~1                                                    ; out              ;
+; |alu_top|booth_mul4:U_MUL|M~4                                                      ; |alu_top|booth_mul4:U_MUL|M~4                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|M~5                                                      ; |alu_top|booth_mul4:U_MUL|M~5                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|M~6                                                      ; |alu_top|booth_mul4:U_MUL|M~6                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|M~7                                                      ; |alu_top|booth_mul4:U_MUL|M~7                                                      ; out              ;
+; |alu_top|booth_mul4:U_MUL|cnt~3                                                    ; |alu_top|booth_mul4:U_MUL|cnt~3                                                    ; out              ;
+; |alu_top|booth_mul4:U_MUL|cnt~4                                                    ; |alu_top|booth_mul4:U_MUL|cnt~4                                                    ; out              ;
+; |alu_top|booth_mul4:U_MUL|cnt~5                                                    ; |alu_top|booth_mul4:U_MUL|cnt~5                                                    ; out              ;
+; |alu_top|booth_mul4:U_MUL|op_sel_reg~1                                             ; |alu_top|booth_mul4:U_MUL|op_sel_reg~1                                             ; out              ;
+; |alu_top|booth_mul4:U_MUL|do_op_reg~1                                              ; |alu_top|booth_mul4:U_MUL|do_op_reg~1                                              ; out              ;
+; |alu_top|booth_mul4:U_MUL|st.S_SHIFT                                               ; |alu_top|booth_mul4:U_MUL|st.S_SHIFT                                               ; regout           ;
+; |alu_top|booth_mul4:U_MUL|st.S_OP                                                  ; |alu_top|booth_mul4:U_MUL|st.S_OP                                                  ; regout           ;
+; |alu_top|booth_mul4:U_MUL|st.S_CHECK                                               ; |alu_top|booth_mul4:U_MUL|st.S_CHECK                                               ; regout           ;
+; |alu_top|booth_mul4:U_MUL|st.S_IDLE                                                ; |alu_top|booth_mul4:U_MUL|st.S_IDLE                                                ; regout           ;
+; |alu_top|booth_mul4:U_MUL|bundle[1]                                                ; |alu_top|booth_mul4:U_MUL|bundle[1]                                                ; out              ;
+; |alu_top|booth_mul4:U_MUL|bundle[2]                                                ; |alu_top|booth_mul4:U_MUL|bundle[2]                                                ; out              ;
+; |alu_top|booth_mul4:U_MUL|bundle[3]                                                ; |alu_top|booth_mul4:U_MUL|bundle[3]                                                ; out              ;
+; |alu_top|booth_mul4:U_MUL|bundle[4]                                                ; |alu_top|booth_mul4:U_MUL|bundle[4]                                                ; out              ;
+; |alu_top|booth_mul4:U_MUL|bundle[5]                                                ; |alu_top|booth_mul4:U_MUL|bundle[5]                                                ; out              ;
+; |alu_top|booth_mul4:U_MUL|bundle[6]                                                ; |alu_top|booth_mul4:U_MUL|bundle[6]                                                ; out              ;
+; |alu_top|booth_mul4:U_MUL|bundle[7]                                                ; |alu_top|booth_mul4:U_MUL|bundle[7]                                                ; out              ;
+; |alu_top|booth_mul4:U_MUL|bundle[8]                                                ; |alu_top|booth_mul4:U_MUL|bundle[8]                                                ; out              ;
+; |alu_top|booth_mul4:U_MUL|bundle[0]                                                ; |alu_top|booth_mul4:U_MUL|bundle[0]                                                ; out              ;
+; |alu_top|booth_mul4:U_MUL|st~12                                                    ; |alu_top|booth_mul4:U_MUL|st~12                                                    ; out0             ;
+; |alu_top|booth_mul4:U_MUL|st.S_IDLE~0                                              ; |alu_top|booth_mul4:U_MUL|st.S_IDLE~0                                              ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector0~0                                              ; |alu_top|booth_mul4:U_MUL|Selector0~0                                              ; out0             ;
+; |alu_top|booth_mul4:U_MUL|st.S_CHECK~0                                             ; |alu_top|booth_mul4:U_MUL|st.S_CHECK~0                                             ; out0             ;
+; |alu_top|booth_mul4:U_MUL|op_sel_n~2                                               ; |alu_top|booth_mul4:U_MUL|op_sel_n~2                                               ; out0             ;
+; |alu_top|booth_mul4:U_MUL|st.S_OP~0                                                ; |alu_top|booth_mul4:U_MUL|st.S_OP~0                                                ; out0             ;
+; |alu_top|booth_mul4:U_MUL|WideOr0~0                                                ; |alu_top|booth_mul4:U_MUL|WideOr0~0                                                ; out0             ;
+; |alu_top|booth_mul4:U_MUL|st.S_SHIFT~0                                             ; |alu_top|booth_mul4:U_MUL|st.S_SHIFT~0                                             ; out0             ;
+; |alu_top|booth_mul4:U_MUL|WideOr0~1                                                ; |alu_top|booth_mul4:U_MUL|WideOr0~1                                                ; out0             ;
+; |alu_top|booth_mul4:U_MUL|st.S_DEC~0                                               ; |alu_top|booth_mul4:U_MUL|st.S_DEC~0                                               ; out0             ;
+; |alu_top|booth_mul4:U_MUL|WideOr0~2                                                ; |alu_top|booth_mul4:U_MUL|WideOr0~2                                                ; out0             ;
+; |alu_top|booth_mul4:U_MUL|st.S_DONE~0                                              ; |alu_top|booth_mul4:U_MUL|st.S_DONE~0                                              ; out0             ;
+; |alu_top|booth_mul4:U_MUL|done                                                     ; |alu_top|booth_mul4:U_MUL|done                                                     ; out0             ;
+; |alu_top|booth_mul4:U_MUL|st~16                                                    ; |alu_top|booth_mul4:U_MUL|st~16                                                    ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|Bx[0]                                     ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|Bx[0]                                     ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|Bx[1]                                     ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|Bx[1]                                     ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|Bx[2]                                     ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|Bx[2]                                     ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|Bx[3]                                     ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|Bx[3]                                     ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:3:fa_i|s~0    ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:3:fa_i|s~0    ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:3:fa_i|s      ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:3:fa_i|s      ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|s~0    ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|s~0    ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|s      ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|s      ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~0 ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~0 ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~1 ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~1 ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~2 ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~2 ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~3 ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~3 ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout   ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout   ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|s~0    ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|s~0    ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|s      ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|s      ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~0 ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~0 ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~1 ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~1 ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~2 ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~2 ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~3 ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~3 ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout   ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout   ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:0:fa_i|s~0    ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:0:fa_i|s~0    ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:0:fa_i|s      ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:0:fa_i|s      ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:0:fa_i|cout~0 ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:0:fa_i|cout~0 ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:0:fa_i|cout~1 ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:0:fa_i|cout~1 ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:0:fa_i|cout~2 ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:0:fa_i|cout~2 ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:0:fa_i|cout~3 ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:0:fa_i|cout~3 ; out0             ;
+; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:0:fa_i|cout   ; |alu_top|booth_mul4:U_MUL|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:0:fa_i|cout   ; out0             ;
+; |alu_top|addsub_n:U_SUB|V_ovf~0                                                    ; |alu_top|addsub_n:U_SUB|V_ovf~0                                                    ; out0             ;
+; |alu_top|addsub_n:U_SUB|V_ovf~1                                                    ; |alu_top|addsub_n:U_SUB|V_ovf~1                                                    ; out0             ;
+; |alu_top|addsub_n:U_SUB|V_ovf~2                                                    ; |alu_top|addsub_n:U_SUB|V_ovf~2                                                    ; out0             ;
+; |alu_top|addsub_n:U_SUB|V_ovf~3                                                    ; |alu_top|addsub_n:U_SUB|V_ovf~3                                                    ; out0             ;
+; |alu_top|addsub_n:U_SUB|V_ovf                                                      ; |alu_top|addsub_n:U_SUB|V_ovf                                                      ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:3:fa_i|s~0                     ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:3:fa_i|s~0                     ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:3:fa_i|s                       ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:3:fa_i|s                       ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:3:fa_i|cout~0                  ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:3:fa_i|cout~0                  ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:3:fa_i|cout~1                  ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:3:fa_i|cout~1                  ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:3:fa_i|cout~2                  ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:3:fa_i|cout~2                  ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:3:fa_i|cout~3                  ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:3:fa_i|cout~3                  ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:3:fa_i|cout                    ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:3:fa_i|cout                    ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:2:fa_i|s~0                     ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:2:fa_i|s~0                     ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:2:fa_i|s                       ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:2:fa_i|s                       ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~0                  ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~0                  ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~1                  ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~1                  ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~2                  ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~2                  ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~3                  ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~3                  ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout                    ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout                    ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:1:fa_i|s~0                     ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:1:fa_i|s~0                     ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:1:fa_i|s                       ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:1:fa_i|s                       ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~0                  ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~0                  ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~1                  ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~1                  ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~2                  ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~2                  ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~3                  ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~3                  ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout                    ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout                    ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:0:fa_i|s~0                     ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:0:fa_i|s~0                     ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:0:fa_i|cout~0                  ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:0:fa_i|cout~0                  ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:0:fa_i|cout~2                  ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:0:fa_i|cout~2                  ; out0             ;
+; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:0:fa_i|cout                    ; |alu_top|addsub_n:U_SUB|rca_n:U_RCA|full_adder:\gen:0:fa_i|cout                    ; out0             ;
+; |alu_top|addsub_n:U_ADD|V_ovf~0                                                    ; |alu_top|addsub_n:U_ADD|V_ovf~0                                                    ; out0             ;
+; |alu_top|addsub_n:U_ADD|V_ovf~1                                                    ; |alu_top|addsub_n:U_ADD|V_ovf~1                                                    ; out0             ;
+; |alu_top|addsub_n:U_ADD|V_ovf~2                                                    ; |alu_top|addsub_n:U_ADD|V_ovf~2                                                    ; out0             ;
+; |alu_top|addsub_n:U_ADD|V_ovf~3                                                    ; |alu_top|addsub_n:U_ADD|V_ovf~3                                                    ; out0             ;
+; |alu_top|addsub_n:U_ADD|V_ovf                                                      ; |alu_top|addsub_n:U_ADD|V_ovf                                                      ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:3:fa_i|s~0                     ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:3:fa_i|s~0                     ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:3:fa_i|s                       ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:3:fa_i|s                       ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:3:fa_i|cout~0                  ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:3:fa_i|cout~0                  ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:3:fa_i|cout~1                  ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:3:fa_i|cout~1                  ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:3:fa_i|cout~2                  ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:3:fa_i|cout~2                  ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:3:fa_i|cout~3                  ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:3:fa_i|cout~3                  ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:3:fa_i|cout                    ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:3:fa_i|cout                    ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|s~0                     ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|s~0                     ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|s                       ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|s                       ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~0                  ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~0                  ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~1                  ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~1                  ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~2                  ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~2                  ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~3                  ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout~3                  ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout                    ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:2:fa_i|cout                    ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|s~0                     ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|s~0                     ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|s                       ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|s                       ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~0                  ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~0                  ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~1                  ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~1                  ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~2                  ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~2                  ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~3                  ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout~3                  ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout                    ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:1:fa_i|cout                    ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:0:fa_i|s~0                     ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:0:fa_i|s~0                     ; out0             ;
+; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:0:fa_i|cout~0                  ; |alu_top|addsub_n:U_ADD|rca_n:U_RCA|full_adder:\gen:0:fa_i|cout~0                  ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector0~0                                          ; |alu_top|nr_div4_signed:U_DIV|Selector0~0                                          ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector0~1                                          ; |alu_top|nr_div4_signed:U_DIV|Selector0~1                                          ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector0~2                                          ; |alu_top|nr_div4_signed:U_DIV|Selector0~2                                          ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector1~0                                          ; |alu_top|nr_div4_signed:U_DIV|Selector1~0                                          ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector1~1                                          ; |alu_top|nr_div4_signed:U_DIV|Selector1~1                                          ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector2~0                                          ; |alu_top|nr_div4_signed:U_DIV|Selector2~0                                          ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector2~1                                          ; |alu_top|nr_div4_signed:U_DIV|Selector2~1                                          ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector3~0                                          ; |alu_top|nr_div4_signed:U_DIV|Selector3~0                                          ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector3~1                                          ; |alu_top|nr_div4_signed:U_DIV|Selector3~1                                          ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector4~0                                          ; |alu_top|nr_div4_signed:U_DIV|Selector4~0                                          ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector4~1                                          ; |alu_top|nr_div4_signed:U_DIV|Selector4~1                                          ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector5~0                                          ; |alu_top|nr_div4_signed:U_DIV|Selector5~0                                          ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector5~1                                          ; |alu_top|nr_div4_signed:U_DIV|Selector5~1                                          ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector6~0                                          ; |alu_top|nr_div4_signed:U_DIV|Selector6~0                                          ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector6~1                                          ; |alu_top|nr_div4_signed:U_DIV|Selector6~1                                          ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector7~0                                          ; |alu_top|nr_div4_signed:U_DIV|Selector7~0                                          ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector7~1                                          ; |alu_top|nr_div4_signed:U_DIV|Selector7~1                                          ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector8~0                                          ; |alu_top|nr_div4_signed:U_DIV|Selector8~0                                          ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector8~1                                          ; |alu_top|nr_div4_signed:U_DIV|Selector8~1                                          ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector9~0                                          ; |alu_top|nr_div4_signed:U_DIV|Selector9~0                                          ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector9~1                                          ; |alu_top|nr_div4_signed:U_DIV|Selector9~1                                          ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector9~2                                          ; |alu_top|nr_div4_signed:U_DIV|Selector9~2                                          ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector10~0                                         ; |alu_top|nr_div4_signed:U_DIV|Selector10~0                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector10~1                                         ; |alu_top|nr_div4_signed:U_DIV|Selector10~1                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector11~0                                         ; |alu_top|nr_div4_signed:U_DIV|Selector11~0                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector12~0                                         ; |alu_top|nr_div4_signed:U_DIV|Selector12~0                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector13~0                                         ; |alu_top|nr_div4_signed:U_DIV|Selector13~0                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector13~1                                         ; |alu_top|nr_div4_signed:U_DIV|Selector13~1                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector14~0                                         ; |alu_top|nr_div4_signed:U_DIV|Selector14~0                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector14~2                                         ; |alu_top|nr_div4_signed:U_DIV|Selector14~2                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector15~0                                         ; |alu_top|nr_div4_signed:U_DIV|Selector15~0                                         ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector15~1                                         ; |alu_top|nr_div4_signed:U_DIV|Selector15~1                                         ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector16~0                                         ; |alu_top|nr_div4_signed:U_DIV|Selector16~0                                         ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector16~1                                         ; |alu_top|nr_div4_signed:U_DIV|Selector16~1                                         ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector17~0                                         ; |alu_top|nr_div4_signed:U_DIV|Selector17~0                                         ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector17~1                                         ; |alu_top|nr_div4_signed:U_DIV|Selector17~1                                         ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Selector18~0                                         ; |alu_top|nr_div4_signed:U_DIV|Selector18~0                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector18~1                                         ; |alu_top|nr_div4_signed:U_DIV|Selector18~1                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector18~2                                         ; |alu_top|nr_div4_signed:U_DIV|Selector18~2                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector18~3                                         ; |alu_top|nr_div4_signed:U_DIV|Selector18~3                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector20~0                                         ; |alu_top|nr_div4_signed:U_DIV|Selector20~0                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector20~2                                         ; |alu_top|nr_div4_signed:U_DIV|Selector20~2                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector21~0                                         ; |alu_top|nr_div4_signed:U_DIV|Selector21~0                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector21~1                                         ; |alu_top|nr_div4_signed:U_DIV|Selector21~1                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector21~2                                         ; |alu_top|nr_div4_signed:U_DIV|Selector21~2                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector21~3                                         ; |alu_top|nr_div4_signed:U_DIV|Selector21~3                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector22~0                                         ; |alu_top|nr_div4_signed:U_DIV|Selector22~0                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector22~1                                         ; |alu_top|nr_div4_signed:U_DIV|Selector22~1                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector22~2                                         ; |alu_top|nr_div4_signed:U_DIV|Selector22~2                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector22~3                                         ; |alu_top|nr_div4_signed:U_DIV|Selector22~3                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector25~0                                         ; |alu_top|nr_div4_signed:U_DIV|Selector25~0                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector25~1                                         ; |alu_top|nr_div4_signed:U_DIV|Selector25~1                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector26~0                                         ; |alu_top|nr_div4_signed:U_DIV|Selector26~0                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector26~1                                         ; |alu_top|nr_div4_signed:U_DIV|Selector26~1                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector26~2                                         ; |alu_top|nr_div4_signed:U_DIV|Selector26~2                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector27~0                                         ; |alu_top|nr_div4_signed:U_DIV|Selector27~0                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector27~1                                         ; |alu_top|nr_div4_signed:U_DIV|Selector27~1                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector27~2                                         ; |alu_top|nr_div4_signed:U_DIV|Selector27~2                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector28~0                                         ; |alu_top|nr_div4_signed:U_DIV|Selector28~0                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector28~1                                         ; |alu_top|nr_div4_signed:U_DIV|Selector28~1                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector28~2                                         ; |alu_top|nr_div4_signed:U_DIV|Selector28~2                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector29~0                                         ; |alu_top|nr_div4_signed:U_DIV|Selector29~0                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector29~1                                         ; |alu_top|nr_div4_signed:U_DIV|Selector29~1                                         ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector29~2                                         ; |alu_top|nr_div4_signed:U_DIV|Selector29~2                                         ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector0~2                                              ; |alu_top|booth_mul4:U_MUL|Selector0~2                                              ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector1~0                                              ; |alu_top|booth_mul4:U_MUL|Selector1~0                                              ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector1~1                                              ; |alu_top|booth_mul4:U_MUL|Selector1~1                                              ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector2~0                                              ; |alu_top|booth_mul4:U_MUL|Selector2~0                                              ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector2~1                                              ; |alu_top|booth_mul4:U_MUL|Selector2~1                                              ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector3~0                                              ; |alu_top|booth_mul4:U_MUL|Selector3~0                                              ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector3~1                                              ; |alu_top|booth_mul4:U_MUL|Selector3~1                                              ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector4~0                                              ; |alu_top|booth_mul4:U_MUL|Selector4~0                                              ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector5~0                                              ; |alu_top|booth_mul4:U_MUL|Selector5~0                                              ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector5~1                                              ; |alu_top|booth_mul4:U_MUL|Selector5~1                                              ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector6~0                                              ; |alu_top|booth_mul4:U_MUL|Selector6~0                                              ; out              ;
+; |alu_top|booth_mul4:U_MUL|Selector6~1                                              ; |alu_top|booth_mul4:U_MUL|Selector6~1                                              ; out              ;
+; |alu_top|booth_mul4:U_MUL|Selector7~0                                              ; |alu_top|booth_mul4:U_MUL|Selector7~0                                              ; out              ;
+; |alu_top|booth_mul4:U_MUL|Selector7~1                                              ; |alu_top|booth_mul4:U_MUL|Selector7~1                                              ; out              ;
+; |alu_top|booth_mul4:U_MUL|Selector8~0                                              ; |alu_top|booth_mul4:U_MUL|Selector8~0                                              ; out              ;
+; |alu_top|booth_mul4:U_MUL|Selector8~1                                              ; |alu_top|booth_mul4:U_MUL|Selector8~1                                              ; out              ;
+; |alu_top|booth_mul4:U_MUL|Selector9~0                                              ; |alu_top|booth_mul4:U_MUL|Selector9~0                                              ; out              ;
+; |alu_top|booth_mul4:U_MUL|Selector9~1                                              ; |alu_top|booth_mul4:U_MUL|Selector9~1                                              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|Add0~0                                               ; |alu_top|nr_div4_signed:U_DIV|Add0~0                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add0~1                                               ; |alu_top|nr_div4_signed:U_DIV|Add0~1                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add0~2                                               ; |alu_top|nr_div4_signed:U_DIV|Add0~2                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add0~3                                               ; |alu_top|nr_div4_signed:U_DIV|Add0~3                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add0~4                                               ; |alu_top|nr_div4_signed:U_DIV|Add0~4                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add1~0                                               ; |alu_top|nr_div4_signed:U_DIV|Add1~0                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add1~1                                               ; |alu_top|nr_div4_signed:U_DIV|Add1~1                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add1~2                                               ; |alu_top|nr_div4_signed:U_DIV|Add1~2                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add1~3                                               ; |alu_top|nr_div4_signed:U_DIV|Add1~3                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add1~4                                               ; |alu_top|nr_div4_signed:U_DIV|Add1~4                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~0                                               ; |alu_top|nr_div4_signed:U_DIV|Add2~0                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~1                                               ; |alu_top|nr_div4_signed:U_DIV|Add2~1                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~2                                               ; |alu_top|nr_div4_signed:U_DIV|Add2~2                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~3                                               ; |alu_top|nr_div4_signed:U_DIV|Add2~3                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~4                                               ; |alu_top|nr_div4_signed:U_DIV|Add2~4                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~5                                               ; |alu_top|nr_div4_signed:U_DIV|Add2~5                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~7                                               ; |alu_top|nr_div4_signed:U_DIV|Add2~7                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~8                                               ; |alu_top|nr_div4_signed:U_DIV|Add2~8                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~9                                               ; |alu_top|nr_div4_signed:U_DIV|Add2~9                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~12                                              ; |alu_top|nr_div4_signed:U_DIV|Add2~12                                              ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~13                                              ; |alu_top|nr_div4_signed:U_DIV|Add2~13                                              ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~14                                              ; |alu_top|nr_div4_signed:U_DIV|Add2~14                                              ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~17                                              ; |alu_top|nr_div4_signed:U_DIV|Add2~17                                              ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~18                                              ; |alu_top|nr_div4_signed:U_DIV|Add2~18                                              ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add3~0                                               ; |alu_top|nr_div4_signed:U_DIV|Add3~0                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add4~0                                               ; |alu_top|nr_div4_signed:U_DIV|Add4~0                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add4~1                                               ; |alu_top|nr_div4_signed:U_DIV|Add4~1                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add4~2                                               ; |alu_top|nr_div4_signed:U_DIV|Add4~2                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add4~3                                               ; |alu_top|nr_div4_signed:U_DIV|Add4~3                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add4~4                                               ; |alu_top|nr_div4_signed:U_DIV|Add4~4                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add5~0                                               ; |alu_top|nr_div4_signed:U_DIV|Add5~0                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add5~1                                               ; |alu_top|nr_div4_signed:U_DIV|Add5~1                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add5~2                                               ; |alu_top|nr_div4_signed:U_DIV|Add5~2                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add5~3                                               ; |alu_top|nr_div4_signed:U_DIV|Add5~3                                               ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add5~4                                               ; |alu_top|nr_div4_signed:U_DIV|Add5~4                                               ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Add0~0                                                   ; |alu_top|booth_mul4:U_MUL|Add0~0                                                   ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Add0~1                                                   ; |alu_top|booth_mul4:U_MUL|Add0~1                                                   ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Add0~2                                                   ; |alu_top|booth_mul4:U_MUL|Add0~2                                                   ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Add0~3                                                   ; |alu_top|booth_mul4:U_MUL|Add0~3                                                   ; out0             ;
+; |alu_top|Equal0~0                                                                  ; |alu_top|Equal0~0                                                                  ; out0             ;
+; |alu_top|Equal0~1                                                                  ; |alu_top|Equal0~1                                                                  ; out0             ;
+; |alu_top|Equal0~2                                                                  ; |alu_top|Equal0~2                                                                  ; out0             ;
+; |alu_top|Equal0~3                                                                  ; |alu_top|Equal0~3                                                                  ; out0             ;
+; |alu_top|Equal0~4                                                                  ; |alu_top|Equal0~4                                                                  ; out0             ;
+; |alu_top|Equal1~0                                                                  ; |alu_top|Equal1~0                                                                  ; out0             ;
+; |alu_top|Equal1~1                                                                  ; |alu_top|Equal1~1                                                                  ; out0             ;
+; |alu_top|Equal1~2                                                                  ; |alu_top|Equal1~2                                                                  ; out0             ;
+; |alu_top|Equal1~3                                                                  ; |alu_top|Equal1~3                                                                  ; out0             ;
+; |alu_top|Equal1~4                                                                  ; |alu_top|Equal1~4                                                                  ; out0             ;
+; |alu_top|Equal2~0                                                                  ; |alu_top|Equal2~0                                                                  ; out0             ;
+; |alu_top|Equal2~1                                                                  ; |alu_top|Equal2~1                                                                  ; out0             ;
+; |alu_top|Equal2~2                                                                  ; |alu_top|Equal2~2                                                                  ; out0             ;
+; |alu_top|Equal2~3                                                                  ; |alu_top|Equal2~3                                                                  ; out0             ;
+; |alu_top|Equal2~4                                                                  ; |alu_top|Equal2~4                                                                  ; out0             ;
+; |alu_top|Equal3~0                                                                  ; |alu_top|Equal3~0                                                                  ; out0             ;
+; |alu_top|Equal3~1                                                                  ; |alu_top|Equal3~1                                                                  ; out0             ;
+; |alu_top|Equal3~2                                                                  ; |alu_top|Equal3~2                                                                  ; out0             ;
+; |alu_top|Equal3~3                                                                  ; |alu_top|Equal3~3                                                                  ; out0             ;
+; |alu_top|Equal3~4                                                                  ; |alu_top|Equal3~4                                                                  ; out0             ;
+; |alu_top|Equal4~0                                                                  ; |alu_top|Equal4~0                                                                  ; out0             ;
+; |alu_top|Equal5~0                                                                  ; |alu_top|Equal5~0                                                                  ; out0             ;
+; |alu_top|Equal10~0                                                                 ; |alu_top|Equal10~0                                                                 ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Equal0~0                                             ; |alu_top|nr_div4_signed:U_DIV|Equal0~0                                             ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Equal1~0                                             ; |alu_top|nr_div4_signed:U_DIV|Equal1~0                                             ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Equal0~0                                                 ; |alu_top|booth_mul4:U_MUL|Equal0~0                                                 ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Equal1~0                                                 ; |alu_top|booth_mul4:U_MUL|Equal1~0                                                 ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Equal2~0                                                 ; |alu_top|booth_mul4:U_MUL|Equal2~0                                                 ; out0             ;
++------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++--------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                           ;
++------------------------------------------------+------------------------------------------------+------------------+
+; Node Name                                      ; Output Port Name                               ; Output Port Type ;
++------------------------------------------------+------------------------------------------------+------------------+
+; |alu_top|prod_reg~7                            ; |alu_top|prod_reg~7                            ; out              ;
+; |alu_top|prod_reg~15                           ; |alu_top|prod_reg~15                           ; out              ;
+; |alu_top|div_overflow~0                        ; |alu_top|div_overflow~0                        ; out0             ;
+; |alu_top|div_overflow                          ; |alu_top|div_overflow                          ; out0             ;
+; |alu_top|prod_reg[0]                           ; |alu_top|prod_reg[0]                           ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|R~0              ; |alu_top|nr_div4_signed:U_DIV|R~0              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_after_shift~0  ; |alu_top|nr_div4_signed:U_DIV|R_after_shift~0  ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_after_shift~1  ; |alu_top|nr_div4_signed:U_DIV|R_after_shift~1  ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|done_n~0         ; |alu_top|nr_div4_signed:U_DIV|done_n~0         ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R[3]             ; |alu_top|nr_div4_signed:U_DIV|R[3]             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|R[2]             ; |alu_top|nr_div4_signed:U_DIV|R[2]             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|R_after_shift[4] ; |alu_top|nr_div4_signed:U_DIV|R_after_shift[4] ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|R_after_shift[3] ; |alu_top|nr_div4_signed:U_DIV|R_after_shift[3] ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|R_after_shift[2] ; |alu_top|nr_div4_signed:U_DIV|R_after_shift[2] ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|Mmag[3]          ; |alu_top|nr_div4_signed:U_DIV|Mmag[3]          ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|Selector10~2     ; |alu_top|nr_div4_signed:U_DIV|Selector10~2     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector11~1     ; |alu_top|nr_div4_signed:U_DIV|Selector11~1     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector12~1     ; |alu_top|nr_div4_signed:U_DIV|Selector12~1     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector13~2     ; |alu_top|nr_div4_signed:U_DIV|Selector13~2     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector14~1     ; |alu_top|nr_div4_signed:U_DIV|Selector14~1     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector19~0     ; |alu_top|nr_div4_signed:U_DIV|Selector19~0     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector19~1     ; |alu_top|nr_div4_signed:U_DIV|Selector19~1     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector19~2     ; |alu_top|nr_div4_signed:U_DIV|Selector19~2     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector19~3     ; |alu_top|nr_div4_signed:U_DIV|Selector19~3     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector20~1     ; |alu_top|nr_div4_signed:U_DIV|Selector20~1     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector20~3     ; |alu_top|nr_div4_signed:U_DIV|Selector20~3     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector23~0     ; |alu_top|nr_div4_signed:U_DIV|Selector23~0     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector23~1     ; |alu_top|nr_div4_signed:U_DIV|Selector23~1     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector23~2     ; |alu_top|nr_div4_signed:U_DIV|Selector23~2     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector24~0     ; |alu_top|nr_div4_signed:U_DIV|Selector24~0     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector24~1     ; |alu_top|nr_div4_signed:U_DIV|Selector24~1     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector24~2     ; |alu_top|nr_div4_signed:U_DIV|Selector24~2     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector25~2     ; |alu_top|nr_div4_signed:U_DIV|Selector25~2     ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector1~2          ; |alu_top|booth_mul4:U_MUL|Selector1~2          ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector2~2          ; |alu_top|booth_mul4:U_MUL|Selector2~2          ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector3~2          ; |alu_top|booth_mul4:U_MUL|Selector3~2          ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector4~1          ; |alu_top|booth_mul4:U_MUL|Selector4~1          ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector5~2          ; |alu_top|booth_mul4:U_MUL|Selector5~2          ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~6           ; |alu_top|nr_div4_signed:U_DIV|Add2~6           ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~10          ; |alu_top|nr_div4_signed:U_DIV|Add2~10          ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~11          ; |alu_top|nr_div4_signed:U_DIV|Add2~11          ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~15          ; |alu_top|nr_div4_signed:U_DIV|Add2~15          ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~16          ; |alu_top|nr_div4_signed:U_DIV|Add2~16          ; out0             ;
+; |alu_top|Equal6~0                              ; |alu_top|Equal6~0                              ; out0             ;
+; |alu_top|Equal8~0                              ; |alu_top|Equal8~0                              ; out0             ;
+; |alu_top|Equal9~0                              ; |alu_top|Equal9~0                              ; out0             ;
++------------------------------------------------+------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++--------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                           ;
++------------------------------------------------+------------------------------------------------+------------------+
+; Node Name                                      ; Output Port Name                               ; Output Port Type ;
++------------------------------------------------+------------------------------------------------+------------------+
+; |alu_top|prod_reg~7                            ; |alu_top|prod_reg~7                            ; out              ;
+; |alu_top|prod_reg~15                           ; |alu_top|prod_reg~15                           ; out              ;
+; |alu_top|div_overflow~0                        ; |alu_top|div_overflow~0                        ; out0             ;
+; |alu_top|div_overflow                          ; |alu_top|div_overflow                          ; out0             ;
+; |alu_top|prod_reg[0]                           ; |alu_top|prod_reg[0]                           ; regout           ;
+; |alu_top|OperationSelect[1]                    ; |alu_top|OperationSelect[1]                    ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R~0              ; |alu_top|nr_div4_signed:U_DIV|R~0              ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_after_shift~0  ; |alu_top|nr_div4_signed:U_DIV|R_after_shift~0  ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R_after_shift~1  ; |alu_top|nr_div4_signed:U_DIV|R_after_shift~1  ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|done_n~0         ; |alu_top|nr_div4_signed:U_DIV|done_n~0         ; out              ;
+; |alu_top|nr_div4_signed:U_DIV|R[3]             ; |alu_top|nr_div4_signed:U_DIV|R[3]             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|R[2]             ; |alu_top|nr_div4_signed:U_DIV|R[2]             ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|R_after_shift[4] ; |alu_top|nr_div4_signed:U_DIV|R_after_shift[4] ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|R_after_shift[3] ; |alu_top|nr_div4_signed:U_DIV|R_after_shift[3] ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|R_after_shift[2] ; |alu_top|nr_div4_signed:U_DIV|R_after_shift[2] ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|Mmag[3]          ; |alu_top|nr_div4_signed:U_DIV|Mmag[3]          ; regout           ;
+; |alu_top|nr_div4_signed:U_DIV|Selector10~2     ; |alu_top|nr_div4_signed:U_DIV|Selector10~2     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector11~1     ; |alu_top|nr_div4_signed:U_DIV|Selector11~1     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector12~1     ; |alu_top|nr_div4_signed:U_DIV|Selector12~1     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector13~2     ; |alu_top|nr_div4_signed:U_DIV|Selector13~2     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector14~1     ; |alu_top|nr_div4_signed:U_DIV|Selector14~1     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector19~0     ; |alu_top|nr_div4_signed:U_DIV|Selector19~0     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector19~1     ; |alu_top|nr_div4_signed:U_DIV|Selector19~1     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector19~2     ; |alu_top|nr_div4_signed:U_DIV|Selector19~2     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector19~3     ; |alu_top|nr_div4_signed:U_DIV|Selector19~3     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector20~1     ; |alu_top|nr_div4_signed:U_DIV|Selector20~1     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector20~3     ; |alu_top|nr_div4_signed:U_DIV|Selector20~3     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector23~0     ; |alu_top|nr_div4_signed:U_DIV|Selector23~0     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector23~1     ; |alu_top|nr_div4_signed:U_DIV|Selector23~1     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector23~2     ; |alu_top|nr_div4_signed:U_DIV|Selector23~2     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector24~0     ; |alu_top|nr_div4_signed:U_DIV|Selector24~0     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector24~1     ; |alu_top|nr_div4_signed:U_DIV|Selector24~1     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector24~2     ; |alu_top|nr_div4_signed:U_DIV|Selector24~2     ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Selector25~2     ; |alu_top|nr_div4_signed:U_DIV|Selector25~2     ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector1~2          ; |alu_top|booth_mul4:U_MUL|Selector1~2          ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector2~2          ; |alu_top|booth_mul4:U_MUL|Selector2~2          ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector3~2          ; |alu_top|booth_mul4:U_MUL|Selector3~2          ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector4~1          ; |alu_top|booth_mul4:U_MUL|Selector4~1          ; out0             ;
+; |alu_top|booth_mul4:U_MUL|Selector5~2          ; |alu_top|booth_mul4:U_MUL|Selector5~2          ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~6           ; |alu_top|nr_div4_signed:U_DIV|Add2~6           ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~10          ; |alu_top|nr_div4_signed:U_DIV|Add2~10          ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~11          ; |alu_top|nr_div4_signed:U_DIV|Add2~11          ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~15          ; |alu_top|nr_div4_signed:U_DIV|Add2~15          ; out0             ;
+; |alu_top|nr_div4_signed:U_DIV|Add2~16          ; |alu_top|nr_div4_signed:U_DIV|Add2~16          ; out0             ;
+; |alu_top|Equal7~0                              ; |alu_top|Equal7~0                              ; out0             ;
+; |alu_top|Equal8~0                              ; |alu_top|Equal8~0                              ; out0             ;
+; |alu_top|Equal9~0                              ; |alu_top|Equal9~0                              ; out0             ;
++------------------------------------------------+------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Simulator
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Oct 17 18:53:36 2025
+Info: Command: quartus_sim --simulation_results_format=VWF CEG3155_Lab2 -c CEG3155_Lab2_qsim
+Info (324025): Using vector source file "C:/Project/CEG3155_Lab2/alu_top.vwf"
+Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info (310002): Simulation partitioned into 1 sub-simulations
+Info (328053): Simulation coverage is      93.47 %
+Info (328052): Number of transitions in simulation is 51216
+Info (324045): Vector file CEG3155_Lab2_qsim.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4473 megabytes
+    Info: Processing ended: Fri Oct 17 18:53:36 2025
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

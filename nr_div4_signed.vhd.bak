@@ -1,0 +1,51 @@
+-- nr_div4_signed.vhd
+-- 4-bit signed non-restoring divider.
+-- Interfaces: clk, rst, start, Dividend, Divisor, done, Q_out(3:0), R_out(3:0), div0
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity nr_div4_signed is
+  port(
+    clk     : in  std_logic;
+    rst     : in  std_logic;              -- synchronous, active-high
+    start   : in  std_logic;
+    Dividend: in  std_logic_vector(3 downto 0); -- signed
+    Divisor : in  std_logic_vector(3 downto 0); -- signed
+    done    : out std_logic;
+    Q_out   : out std_logic_vector(3 downto 0); -- signed quotient
+    R_out   : out std_logic_vector(3 downto 0); -- signed remainder (truncated)
+    div0    : out std_logic                    -- divide-by-zero flag
+  );
+end entity;
+
+architecture rtl of nr_div4_signed is
+  component addsub_n is
+    generic(N : integer := 4);
+    port(
+      A      : in  std_logic_vector(N-1 downto 0);
+      B      : in  std_logic_vector(N-1 downto 0);
+      AddSub : in  std_logic;  -- 0: add, 1: subtract
+      S      : out std_logic_vector(N-1 downto 0);
+      Cout   : out std_logic;
+      V_ovf  : out std_logic
+    );
+  end component;
+
+  -- We'll need 5-bit remainder: reuse addsub_n with N=5
+  component addsub5 is
+    port(
+      A      : in  std_logic_vector(4 downto 0);
+      B      : in  std_logic_vector(4 downto 0);
+      AddSub : in  std_logic;
+      S      : out std_logic_vector(4 downto 0);
+      Cout   : out std_logic;
+      V_ovf  : out std_logic
+    );
+  end component;
+
+  -- lightweight wrapper mapping to addsub_n with N=5
+  -- Put this wrapper in this file for convenience
+begin
+end architecture;

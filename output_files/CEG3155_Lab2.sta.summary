@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'GClock'
+Slack : -1.897
+TNS   : -116.726
+
+Type  : Slow 1200mV 85C Model Setup 'booth_mul4:U_MUL|st.S_SHIFT'
+Slack : -0.599
+TNS   : -4.649
+
+Type  : Slow 1200mV 85C Model Hold 'booth_mul4:U_MUL|st.S_SHIFT'
+Slack : 0.185
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'GClock'
+Slack : 0.279
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'GClock'
+Slack : -3.000
+TNS   : -140.495
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'booth_mul4:U_MUL|st.S_SHIFT'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'GClock'
+Slack : -1.624
+TNS   : -96.922
+
+Type  : Slow 1200mV 0C Model Setup 'booth_mul4:U_MUL|st.S_SHIFT'
+Slack : -0.560
+TNS   : -4.363
+
+Type  : Slow 1200mV 0C Model Hold 'booth_mul4:U_MUL|st.S_SHIFT'
+Slack : 0.291
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'GClock'
+Slack : 0.318
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'GClock'
+Slack : -3.000
+TNS   : -140.495
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'booth_mul4:U_MUL|st.S_SHIFT'
+Slack : 0.471
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'GClock'
+Slack : -0.752
+TNS   : -10.416
+
+Type  : Fast 1200mV 0C Model Setup 'booth_mul4:U_MUL|st.S_SHIFT'
+Slack : 0.021
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'GClock'
+Slack : -0.027
+TNS   : -0.027
+
+Type  : Fast 1200mV 0C Model Hold 'booth_mul4:U_MUL|st.S_SHIFT'
+Slack : 0.239
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'GClock'
+Slack : -3.000
+TNS   : -116.727
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'booth_mul4:U_MUL|st.S_SHIFT'
+Slack : 0.355
+TNS   : 0.000
+
+------------------------------------------------------------

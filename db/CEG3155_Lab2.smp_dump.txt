@@ -1,0 +1,19 @@
+
+State Machine - |alu_top|nr_div4_signed:U_DIV|st
+Name st.S_DONE st.S_SIGN st.S_DEC st.S_CHECK st.S_SHIFT st.S_PREP st.S_IDLE 
+st.S_IDLE 0 0 0 0 0 0 0 
+st.S_PREP 0 0 0 0 0 1 1 
+st.S_SHIFT 0 0 0 0 1 0 1 
+st.S_CHECK 0 0 0 1 0 0 1 
+st.S_DEC 0 0 1 0 0 0 1 
+st.S_SIGN 0 1 0 0 0 0 1 
+st.S_DONE 1 0 0 0 0 0 1 
+
+State Machine - |alu_top|booth_mul4:U_MUL|st
+Name st.S_DONE st.S_DEC st.S_SHIFT st.S_OP st.S_CHECK st.S_IDLE 
+st.S_IDLE 0 0 0 0 0 0 
+st.S_CHECK 0 0 0 0 1 1 
+st.S_OP 0 0 0 1 0 1 
+st.S_SHIFT 0 0 1 0 0 1 
+st.S_DEC 0 1 0 0 0 1 
+st.S_DONE 1 0 0 0 0 1 

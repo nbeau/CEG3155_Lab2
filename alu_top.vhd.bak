@@ -1,0 +1,243 @@
+-- alu_top.vhd
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity alu_top is
+  port(
+    GClock            : in  std_logic;
+    GReset            : in  std_logic;  -- synchronous, active-high
+    OperandA          : in  std_logic_vector(3 downto 0);
+    OperandB          : in  std_logic_vector(3 downto 0);
+    OperationSelect   : in  std_logic_vector(1 downto 0);
+    MuxOut            : out std_logic_vector(7 downto 0);
+    CarryOut          : out std_logic;
+    ZeroOut           : out std_logic;
+    OverflowOut       : out std_logic
+  );
+end entity;
+
+architecture rtl of alu_top is
+  component addsub_n is
+    generic(N : integer := 4);
+    port(
+      A      : in  std_logic_vector(N-1 downto 0);
+      B      : in  std_logic_vector(N-1 downto 0);
+      AddSub : in  std_logic;
+      S      : out std_logic_vector(N-1 downto 0);
+      Cout   : out std_logic;
+      V_ovf  : out std_logic
+    );
+  end component;
+
+  component booth_mul4 is
+    port(
+      clk   : in  std_logic;
+      rst   : in  std_logic;
+      start : in  std_logic;
+      A_in  : in  std_logic_vector(3 downto 0);
+      B_in  : in  std_logic_vector(3 downto 0);
+      done  : out std_logic;
+      P_out : out std_logic_vector(7 downto 0)
+    );
+  end component;
+
+  component nr_div4_signed is
+    port(
+      clk     : in  std_logic;
+      rst     : in  std_logic;
+      start   : in  std_logic;
+      Dividend: in  std_logic_vector(3 downto 0);
+      Divisor : in  std_logic_vector(3 downto 0);
+      done    : out std_logic;
+      Q_out   : out std_logic_vector(3 downto 0);
+      R_out   : out std_logic_vector(3 downto 0);
+      div0    : out std_logic
+    );
+  end component;
+
+  -- add/sub wires
+  signal sum4, diff4 : std_logic_vector(3 downto 0);
+  signal cout_add, cout_sub : std_logic;
+  signal ovf_add, ovf_sub   : std_logic;
+
+  -- mul
+  signal mul_start, mul_done : std_logic;
+  signal mul_p               : std_logic_vector(7 downto 0);
+
+  -- div
+  signal div_start, div_done : std_logic;
+  signal div_q, div_r        : std_logic_vector(3 downto 0);
+  signal div_by_zero         : std_logic;
+
+  -- output register to hold last valid result for sequential ops
+  signal out_reg, out_reg_n  : std_logic_vector(7 downto 0);
+
+  -- state to auto-fire start for sequential ops
+  type s_t is (S_IDLE, S_MUL_RUN, S_DIV_RUN);
+  signal s, s_n : s_t;
+
+  -- selected outputs + flags
+  signal sel     : std_logic_vector(1 downto 0);
+  signal carry_s : std_logic;
+  signal zero_s  : std_logic;
+  signal ovf_s   : std_logic;
+
+begin
+  sel <= OperationSelect;
+
+  -- add (00)
+  U_ADD4: addsub_n
+    generic map (N => 4)
+    port map(
+      A      => OperandA,
+      B      => OperandB,
+      AddSub => '0',
+      S      => sum4,
+      Cout   => cout_add,
+      V_ovf  => ovf_add
+    );
+
+  -- sub (01)
+  U_SUB4: addsub_n
+    generic map (N => 4)
+    port map(
+      A      => OperandA,
+      B      => OperandB,
+      AddSub => '1',
+      S      => diff4,
+      Cout   => cout_sub,
+      V_ovf  => ovf_sub
+    );
+
+  -- mul (10)
+  U_MUL: booth_mul4
+    port map(
+      clk   => GClock,
+      rst   => GReset,
+      start => mul_start,
+      A_in  => OperandA,
+      B_in  => OperandB,
+      done  => mul_done,
+      P_out => mul_p
+    );
+
+  -- div (11)
+  U_DIV: nr_div4_signed
+    port map(
+      clk      => GClock,
+      rst      => GReset,
+      start    => div_start,
+      Dividend => OperandA,
+      Divisor  => OperandB,
+      done     => div_done,
+      Q_out    => div_q,
+      R_out    => div_r,
+      div0     => div_by_zero
+    );
+
+  -- simple controller for sequential ops (no external start/done)
+  process(s, sel, mul_done, div_done)
+  begin
+    s_n       <= s;
+    mul_start <= '0';
+    div_start <= '0';
+
+    case s is
+      when S_IDLE =>
+        if sel = "10" then
+          mul_start <= '1';      -- one-cycle pulse
+          s_n       <= S_MUL_RUN;
+        elsif sel = "11" then
+          div_start <= '1';
+          s_n       <= S_DIV_RUN;
+        else
+          s_n       <= S_IDLE;
+        end if;
+
+      when S_MUL_RUN =>
+        if mul_done = '1' then
+          s_n <= S_IDLE;
+        else
+          s_n <= S_MUL_RUN;
+        end if;
+
+      when S_DIV_RUN =>
+        if div_done = '1' then
+          s_n <= S_IDLE;
+        else
+          s_n <= S_DIV_RUN;
+        end if;
+
+      when others =>
+        s_n <= S_IDLE;
+    end case;
+  end process;
+
+  -- output register: latch results
+  process(all)
+  begin
+    out_reg_n <= out_reg;
+    case sel is
+      when "00" => -- add: show immediately (upper nibble zero)
+        out_reg_n <= x"0" & sum4;
+      when "01" => -- sub
+        out_reg_n <= x"0" & diff4;
+      when "10" => -- mul: latch when done
+        if mul_done = '1' then
+          out_reg_n <= mul_p;
+        end if;
+      when "11" => -- div: latch when done (R|Q)
+        if div_done = '1' then
+          out_reg_n <= div_r & div_q;
+        end if;
+      when others =>
+        null;
+    end case;
+  end process;
+
+  process(GClock)
+  begin
+    if rising_edge(GClock) then
+      if GReset = '1' then
+        s       <= S_IDLE;
+        out_reg <= (others => '0');
+      else
+        s       <= s_n;
+        out_reg <= out_reg_n;
+      end if;
+    end if;
+  end process;
+
+  -- status flags per our agreed convention
+  -- CarryOut: add/sub valid; mul/div -> '0'
+  carry_s <= (cout_add and (not sel(1)) and (not sel(0))) or
+             (cout_sub and (not sel(1)) and sel(0));
+
+  -- OverflowOut:
+  --  add/sub: from addsub
+  --  mul: 1 if upper 4 != sign-extension of lower 4
+  --  div: 1 if divide-by-zero, else 0
+  ovf_s <=
+    -- add
+    (ovf_add and (not sel(1)) and (not sel(0))) or
+    -- sub
+    (ovf_sub and (not sel(1)) and sel(0)) or
+    -- mul
+    ( (sel = "10") and
+      ( (out_reg(7) /= out_reg(3)) or
+        (out_reg(6) /= out_reg(3)) or
+        (out_reg(5) /= out_reg(3)) or
+        (out_reg(4) /= out_reg(3)) ) ) or
+    -- div
+    ( (sel = "11") and div_by_zero );
+
+  -- ZeroOut: MuxOut (i.e., out_reg) all zeros
+  zero_s <= '1' when out_reg = (others => '0') else '0';
+
+  MuxOut     <= out_reg;
+  CarryOut   <= carry_s;
+  OverflowOut<= ovf_s;
+  ZeroOut    <= zero_s;
+
+end architecture;

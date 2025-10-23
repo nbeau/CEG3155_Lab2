@@ -1,0 +1,172 @@
+-- booth_mul4.vhd
+-- 4-bit signed Booth multiplier, produces 8-bit product.
+-- Interfaces: clk, rst (sync active-high), start, A_in(3:0), B_in(3:0), done, P_out(7:0)
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity booth_mul4 is
+  port(
+    clk   : in  std_logic;
+    rst   : in  std_logic;     -- synchronous, active-high
+    start : in  std_logic;
+    A_in  : in  std_logic_vector(3 downto 0);  -- multiplicand (signed)
+    B_in  : in  std_logic_vector(3 downto 0);  -- multiplier   (signed)
+    done  : out std_logic;
+    P_out : out std_logic_vector(7 downto 0)   -- product
+  );
+end entity;
+
+architecture rtl of booth_mul4 is
+  -- reuse addsub_n as 4-bit add/sub for A <= A ± M
+  component addsub_n is
+    generic(N : integer := 4);
+    port(
+      A      : in  std_logic_vector(N-1 downto 0);
+      B      : in  std_logic_vector(N-1 downto 0);
+      AddSub : in  std_logic;  -- 0: add, 1: subtract
+      S      : out std_logic_vector(N-1 downto 0);
+      Cout   : out std_logic;
+      V_ovf  : out std_logic
+    );
+  end component;
+
+  type state_t is (S_IDLE, S_CHECK, S_OP, S_SHIFT, S_DEC, S_DONE);
+  signal st, st_n : state_t;
+
+  signal A, A_n : std_logic_vector(3 downto 0); -- accumulator (signed)
+  signal Q, Q_n : std_logic_vector(3 downto 0); -- multiplier shift reg (signed)
+  signal M      : std_logic_vector(3 downto 0); -- multiplicand (signed), constant after load
+  signal Qm1, Qm1_n : std_logic;                -- Q_-1 latch
+  signal cnt, cnt_n  : unsigned(2 downto 0);    -- 0..4
+  signal addsub_sel  : std_logic;               -- 0:add, 1:sub
+  signal do_op       : std_logic;               -- perform A ± M this cycle
+  signal S_res       : std_logic_vector(3 downto 0);
+  signal dummy_c, dummy_v : std_logic;
+
+  -- arithmetic right shift of {A,Q,Qm1}
+  function arith_right_shift(
+    A_in : std_logic_vector(3 downto 0);
+    Q_in : std_logic_vector(3 downto 0);
+    Q1   : std_logic
+  ) return std_logic_vector is
+    variable res : std_logic_vector(8 downto 0); -- {A,Q,Q1} = 4+4+1 = 9b
+    variable sgn : std_logic;
+  begin
+    res := A_in & Q_in & Q1;       -- MSB is A_in(3)
+    sgn := A_in(3);                -- sign for arithmetic shift
+    -- shift right by 1, MSB fills with sign
+    res := sgn & res(8 downto 1);
+    return res;
+  end function;
+
+  signal shift_bundle, shift_bundle_n : std_logic_vector(8 downto 0);
+
+begin
+  -- ALU for A ± M
+  U_ADD_SUB: addsub_n
+    generic map (N => 4)
+    port map(
+      A      => A,
+      B      => M,
+      AddSub => addsub_sel, -- 0 add, 1 sub
+      S      => S_res,
+      Cout   => dummy_c,
+      V_ovf  => dummy_v
+    );
+
+  -- Next-state / control
+  process(st, start, cnt, A, Q, Qm1)
+    variable Q0Qm1 : std_logic_vector(1 downto 0);
+  begin
+    st_n      <= st;
+    A_n       <= A;
+    Q_n       <= Q;
+    Qm1_n     <= Qm1;
+    cnt_n     <= cnt;
+    do_op     <= '0';
+    addsub_sel<= '0';
+    shift_bundle_n <= (others => '0');
+
+    case st is
+      when S_IDLE =>
+        if start = '1' then
+          st_n  <= S_CHECK;
+        else
+          st_n  <= S_IDLE;
+        end if;
+
+      when S_CHECK =>
+        -- decide operation by {Q0, Q_-1}
+        Q0Qm1 := Q(0) & Qm1;
+        case Q0Qm1 is
+          when "10" => do_op <= '1'; addsub_sel <= '1'; st_n <= S_OP;      -- A <- A - M
+          when "01" => do_op <= '1'; addsub_sel <= '0'; st_n <= S_OP;      -- A <- A + M
+          when others => st_n <= S_SHIFT;                                  -- no op, just shift
+        end case;
+
+      when S_OP =>
+        -- commit A <= S_res then go to shift
+        A_n   <= S_res;
+        st_n  <= S_SHIFT;
+
+      when S_SHIFT =>
+        -- arithmetic right shift of {A,Q,Qm1}
+        shift_bundle      <= arith_right_shift(A, Q, Qm1);
+        A_n               <= shift_bundle(8 downto 5);
+        Q_n               <= shift_bundle(4 downto 1);
+        Qm1_n             <= shift_bundle(0);
+        st_n              <= S_DEC;
+
+      when S_DEC =>
+        if cnt = 0 then
+          st_n <= S_DONE;
+        else
+          cnt_n <= cnt - 1;
+          st_n  <= S_CHECK;
+        end if;
+
+      when S_DONE =>
+        st_n <= S_IDLE;
+
+      when others =>
+        st_n <= S_IDLE;
+    end case;
+  end process;
+
+  -- Registers
+  process(clk)
+  begin
+    if rising_edge(clk) then
+      if rst = '1' then
+        st   <= S_IDLE;
+        A    <= (others => '0');
+        Q    <= (others => '0');
+        M    <= (others => '0');
+        Qm1  <= '0';
+        cnt  <= (others => '0');
+      else
+        -- load on start in IDLE
+        if (st = S_IDLE) and (start = '1') then
+          A   <= (others => '0');
+          Q   <= B_in;
+          M   <= A_in;
+          Qm1 <= '0';
+          cnt <= to_unsigned(4, cnt'length);
+          st  <= S_CHECK;
+        else
+          st  <= st_n;
+          A   <= A_n;
+          Q   <= Q_n;
+          Qm1 <= Qm1_n;
+          cnt <= cnt_n;
+        end if;
+      end if;
+    end if;
+  end process;
+
+  done  <= '1' when st = S_DONE else '0';
+  P_out <= A & Q;
+
+end architecture;
